@@ -12,6 +12,7 @@ Ce guide explique tout, pas à pas : récupérer le template, le remplir, le tes
   - **Vercel** (vercel.com) : le service qui met ton site sur Internet. Tu t'y inscris avec **Continue with GitHub**, sans nouveau mot de passe.
 - **Les connecteurs : facultatifs.** Certaines applications d'IA (par exemple Claude) peuvent se connecter à ton GitHub et à ton Vercel. L'IA peut alors mettre le site en ligne elle-même, avec ton accord. Tu les actives dans les paramètres de l'application, rubrique des connecteurs, puis **GitHub** et **Vercel**. **Sans connecteur, tout marche aussi** : l'IA te guide clic par clic (section 8).
 - **Avec ChatGPT** : rien à connecter. Envoie-lui le ZIP, il te rend ton portfolio en ZIP, puis il te guide pour la mise en ligne.
+- **Le message exact à écrire à ton IA** (Claude.ai, ChatGPT, Claude Code, Codex...) : voir [PROMPTS.md](PROMPTS.md).
 - **Python** : seulement pour la synchronisation (section 4). Si ton IA peut lancer des commandes, elle s'en occupe.
 
 
@@ -141,6 +142,15 @@ Sans connaître Git, en 10 minutes environ :
 
 Si tu connais Git : `git push` ou GitHub Desktop remplacent les étapes 2 et 3.
 
+### Le plus rapide : Vercel Drop
+
+Si GitHub te bloque, ou pour mettre ton site en ligne en une minute :
+1. Va sur [vercel.com/drop](https://vercel.com/drop).
+2. Glisse ton dossier (celui qui contient `index.html`) ou ton ZIP final dans la page.
+3. Connecte-toi à Vercel (gratuit), donne le nom `prenom-nom-portfolio`, puis **Deploy**.
+
+Limite : chaque Drop crée un nouveau projet. Pour mettre à jour ton site, supprime d'abord l'ancien projet dans Vercel (le projet, **Settings**, tout en bas **Delete Project**), puis refais un Drop avec le même nom. Si tu comptes modifier souvent ton portfolio, le chemin GitHub ci-dessus est plus pratique.
+
 **Le nom de l'adresse.** Nom conseillé : `prenom-nom-portfolio`, pour obtenir `prenom-nom-portfolio.vercel.app`. Écris-le en minuscules, sans accents ni espaces, mots séparés par des tirets (par exemple `lea-verdier-portfolio`). L'adresse vient de ce nom : le plus simple est de le donner à ton dépôt GitHub (par exemple lors de **Use this template**) ou au projet Vercel à l'import (étape 3). Si l'adresse est déjà prise, Vercel ajoute des lettres au hasard : ajoute alors une adresse libre dans le projet Vercel, **Settings**, puis **Domains** (par exemple `prenom-nom-portfolio.vercel.app` ou une variante). Mets ensuite cette adresse dans `site.url` et synchronise (étape 6).
 
 Le bouton **Deploy with Vercel** du README fait autre chose : il crée dans ton GitHub une copie neuve du template (avec le contenu d'exemple) et la met en ligne. C'est un raccourci si tu pars de zéro. Si tu as déjà ton dépôt, importe-le comme ci-dessus.
@@ -187,6 +197,7 @@ Quel que soit l'hébergeur : pas de commande de build, et lance `python3 sync-co
 - **To publish**, two free accounts, which you can create now, during the interview or at the end: **GitHub** (github.com), where your site's files are stored, and **Vercel** (vercel.com), which puts the site online. Sign up to Vercel with **Continue with GitHub**.
 - **Connectors are optional.** Some AI apps (Claude, for example) can connect to your GitHub and Vercel, and then publish the site for you, with your approval. Turn them on in the app settings, connectors section. **Without connectors everything still works**: the AI guides you click by click (section 7).
 - **With ChatGPT**: nothing to connect. Send it the ZIP, it returns your portfolio as a ZIP, then guides you to publish it.
+- **The exact message to send your AI** (Claude.ai, ChatGPT, Claude Code, Codex...): see [PROMPTS.md](PROMPTS.md#english).
 - **Python**: only for the sync (section 4). If your AI can run commands, it handles it.
 
 
@@ -260,6 +271,8 @@ How to, without Git (about 10 minutes):
 7. **Finish**: put the address in `site.url`, sync (section 4), and upload `contenu.json`, `contenu.js` and `index.html` again (**Add file**, **Upload files**: they replace the old ones).
 
 To update the site later: edit, sync, upload the changed files the same way. Vercel updates the site in about a minute. If you know Git, `git push` or GitHub Desktop replace steps 2 and 3.
+
+**Fastest: Vercel Drop.** Go to [vercel.com/drop](https://vercel.com/drop), drag your folder (the one with `index.html`) or your final ZIP, sign in to Vercel (free), name it `firstname-lastname-portfolio`, then **Deploy**. Limit: each Drop creates a new project. To update the site, delete the old project first (project **Settings**, **Delete Project** at the bottom), then Drop again with the same name, or use the GitHub path above.
 
 **The address name.** Suggested name: `firstname-lastname-portfolio`, to get `firstname-lastname-portfolio.vercel.app`. Write it in lowercase, without accents or spaces, words separated by hyphens (for example `lea-verdier-portfolio`). The address comes from this name: the simplest is to give it to your GitHub repository (for example with **Use this template**) or to the Vercel project when importing (step 3). If the address is already taken, Vercel adds random letters: then add a free address in the Vercel project, **Settings**, then **Domains** (for example `firstname-lastname-portfolio.vercel.app` or a variant). Then put this address in `site.url` and sync (step 6).
 

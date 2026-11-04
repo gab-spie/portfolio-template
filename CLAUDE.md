@@ -2,6 +2,8 @@
 
 Quand l'utilisateur dit « adapte ce portfolio à moi » (ou équivalent), suis **à la lettre** le fichier [INSTRUCTIONS-IA.md](INSTRUCTIONS-IA.md). Lis-le en entier d'abord.
 
+@INSTRUCTIONS-IA.md
+
 Résumé :
 - **Dès le premier message**, dis ce que tu peux faire ici (fichiers, commandes, connecteurs GitHub et Vercel) et ce qu'il faudra pour la mise en ligne (comptes GitHub et Vercel gratuits). Section « Avant tout » de `INSTRUCTIONS-IA.md`.
 - **Avant toute question, montre le portfolio à la personne** (étape 0 de `INSTRUCTIONS-IA.md` : lance le site ou montre les images de `apercu/`), car elle ne sait pas à quoi il ressemble.
