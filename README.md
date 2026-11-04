@@ -159,7 +159,7 @@ Un fonctionnement en étapes reliées par des flèches (une méthode, une chaîn
 - `miseEnPage` : `"cote"` (image sur le côté), `"une"` (une image en haut), `"large"` (image large), `"duo"` (deux images). Par défaut : `"duo"` avec deux images ou plus, sinon `"une"`.
 
 ### `contact` (optionnel)
-`titre` (par exemple ta disponibilité), `mail`, `linkedin`, `liens` (liste de `{ "label", "url" }`) et `pdf` (`{ "fr": "portfolio-fr.pdf", "en": "portfolio-en.pdf", "label": { "fr": "...", "en": "..." } }`, ou `null`).
+`titre` (la grande phrase du bloc contact, selon ton objectif : un poste, des missions, une alternance, un simple « Écrivez-moi »), `mail`, `linkedin`, `liens` (liste de `{ "label", "url" }`) et `pdf` (`{ "fr": "portfolio-fr.pdf", "en": "portfolio-en.pdf", "label": { "fr": "...", "en": "..." } }`, ou `null`).
 
 ## Contenu du dépôt
 

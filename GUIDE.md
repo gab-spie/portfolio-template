@@ -157,7 +157,7 @@ Quel que soit l'hébergeur : pas de commande de build, et lance `python3 sync-co
 | Image cassée | Mauvais chemin dans `src`. Le script le signale. |
 | Aperçu de partage faux | Tu n'as pas relancé `sync-contenu.py`, ou `site.url` est vide. |
 | Contenu pas à jour en ouvrant le fichier directement | `contenu.js` est périmé : relance `sync-contenu.py`. |
-| Texte d'exemple qui reste | Cherche `Verdier`, `Orbite`, `Atelier Lune`, `Cartable`, `Nordwind`, `Horizon`, `exemple.com`, `example.com`, `votre-profil`, `portfolio-spie` dans le dossier. |
+| Texte d'exemple qui reste | Cherche `Verdier`, `Orbite`, `Atelier Lune`, `Cartable`, `Nordwind`, `Horizon`, `mars 2027`, `exemple.com`, `example.com`, `votre-profil`, `portfolio-spie` dans le dossier. |
 
 ---
 
@@ -258,4 +258,4 @@ Open the site and print to PDF (enable background graphics). Or run `npm i playw
 - **Broken image**: wrong path in `src`. The script flags it.
 - **Wrong share preview**: you did not run `sync-contenu.py`, or `site.url` is empty.
 - **Direct file opening shows old content**: `contenu.js` is stale. Run the sync.
-- **Example text left**: search the folder for `Verdier`, `Orbite`, `Atelier Lune`, `Cartable`, `Nordwind`, `Horizon`, `exemple.com`, `example.com`, `votre-profil`, `portfolio-spie`.
+- **Example text left**: search the folder for `Verdier`, `Orbite`, `Atelier Lune`, `Cartable`, `Nordwind`, `Horizon`, `mars 2027`, `exemple.com`, `example.com`, `votre-profil`, `portfolio-spie`.
