@@ -40,7 +40,7 @@ Le site s'adapte au nombre de projets : 1, 3 ou 6, la page se construit seule. U
    - **Use this template** (recommandé) : bouton vert en haut de la page GitHub, puis **Create a new repository**. Tu obtiens ton propre dépôt.
    - **Download ZIP** : bouton **Code**, puis **Download ZIP**. Pratique si tu ne connais pas Git.
    - **Clone** : `git clone https://github.com/gab-spie/portfolio-template.git mon-portfolio`, puis `git remote remove origin`.
-2. **Remplis `contenu.json` et `img/`**. Le plus simple : ouvre le dossier avec une IA (Claude Code, ChatGPT/Codex, Gemini, Cursor...) et dis « adapte ce portfolio à moi ». Elle te pose des questions (qui tu es, ton objectif, tes projets, tes couleurs, tes phrases) puis remplit tout. Voir [INSTRUCTIONS-IA.md](INSTRUCTIONS-IA.md).
+2. **Remplis `contenu.json` et `img/`**. Le plus simple : ouvre le dossier avec une IA (Claude Code, ChatGPT/Codex, Gemini, Cursor...) et dis « adapte ce portfolio à moi ». Elle te pose des questions (qui tu es, ton objectif, tes projets, tes couleurs, tes phrases) puis remplit tout. L'IA commence par te montrer à quoi ressemble le portfolio, puis te pose les questions par petites parties. Tu peux aussi remplir à l'avance [QUESTIONNAIRE.md](QUESTIONNAIRE.md). Détails : [INSTRUCTIONS-IA.md](INSTRUCTIONS-IA.md).
    Sans IA : modifie `contenu.json` à la main (champs décrits plus bas), remplace les images dans `img/`, puis lance `python3 sync-contenu.py`.
 3. **Mets en ligne avec Vercel (fortement recommandé)**. Vercel est un hébergeur : il met ton site sur Internet et te donne une adresse (`ton-nom.vercel.app`). C'est gratuit pour un portfolio personnel, sans aucune commande, et le site se met à jour à chaque modification de ton dépôt GitHub. Marche à suivre : [GUIDE.md](GUIDE.md#vercel).
    Le bouton ci-dessous crée une copie neuve du template dans ton GitHub et la met en ligne en quelques clics : [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fgab-spie%2Fportfolio-template)
@@ -170,6 +170,7 @@ Un fonctionnement en étapes reliées par des flèches (une méthode, une chaîn
 | `exporter-pdf.js` | Export PDF avec Playwright. |
 | `GUIDE.md` | Guide complet pas à pas (FR et EN). |
 | `INSTRUCTIONS-IA.md`, `CLAUDE.md`, `AGENTS.md` | Consignes pour qu'une IA t'aide à tout remplir. |
+| `QUESTIONNAIRE.md` | Questionnaire à remplir à l'avance, à donner à ton IA. |
 
 Tout le contenu d'exemple (Léa Verdier, Orbite, Atelier Lune, Cartable, Nordwind Labs, Institut Horizon) est fictif. Les images d'exemple sont générées. Les logos d'outils appartiennent à leurs propriétaires.
 

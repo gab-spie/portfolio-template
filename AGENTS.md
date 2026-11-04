@@ -2,7 +2,7 @@
 
 Ce dossier est un template de portfolio piloté par un seul fichier de contenu : `contenu.json`.
 
-Si l'utilisateur demande d'adapter ce portfolio à lui, lis en entier [INSTRUCTIONS-IA.md](INSTRUCTIONS-IA.md) et suis-le : entretien d'abord (contexte, objectif, projets, couleurs par projet avec contraste vérifié, phrase d'accroche et phrase qui s'allume proposées d'abord par la personne), puis remplissage de `contenu.json`, préparation des images dans `img/`, `python3 sync-contenu.py`, vérification du rendu.
+Si l'utilisateur demande d'adapter ce portfolio à lui, lis en entier [INSTRUCTIONS-IA.md](INSTRUCTIONS-IA.md) et suis-le : **montre d'abord le portfolio** (étape 0 : lance le site ou montre les images de `apercu/`, la personne ne sait pas à quoi il ressemble), puis entretien par parties, jamais toute la liste d'un coup (contexte, objectif, projets, couleurs par projet avec contraste vérifié, phrase d'accroche et phrase qui s'allume proposées d'abord par la personne) (contexte, objectif, projets, couleurs par projet avec contraste vérifié, phrase d'accroche et phrase qui s'allume proposées d'abord par la personne), puis remplissage de `contenu.json`, préparation des images dans `img/`, `python3 sync-contenu.py`, vérification du rendu.
 Sans accès aux fichiers, suis la section « Mode conversation seule » de ce même fichier.
 
 Règles essentielles :

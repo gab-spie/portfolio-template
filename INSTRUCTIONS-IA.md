@@ -21,12 +21,35 @@ Le template sert à n'importe qui : étudiant, salarié, freelance, designer, d�
 Ne suppose rien : ni le métier, ni le niveau technique, ni que les projets sont des projets web ou d'IA.
 L'exemple (une étudiante en gestion qui fait des outils web) n'est pas un modèle. N'en reprends ni le ton, ni la structure des projets, ni les outils.
 Un « projet » peut être un site, une étude, un mémoire, une campagne, un événement, une création, un produit, une mission de stage.
-**Commence toujours par poser des questions.** Ne remplis rien avant d'avoir compris le contexte.
+**Commence par montrer l'aperçu (étape 0), puis pose des questions.** Ne remplis rien avant d'avoir compris le contexte.
 N'invente jamais un chiffre, un nom, un résultat, un diplôme ou un client. Si la personne n'a pas de chiffre, n'en mets pas.
+
+## Étape 0. Montre d'abord à quoi ressemble le portfolio
+
+La personne ne connaît pas le résultat. Avant toute question, **montre-lui le portfolio**, sinon elle répond à l'aveugle.
+
+1. **Si tu peux lancer des commandes et ouvrir un navigateur** : lance `python3 -m http.server 8000` dans le dossier, ouvre `http://localhost:8000` et dis-lui de faire défiler la page. Si tu ne peux pas ouvrir de navigateur, prends des captures (Playwright, par exemple) et montre-les, ou dis-lui d'ouvrir `index.html` par double-clic.
+2. **Si tu ne peux pas lancer de commandes** (conversation seule) : montre les images du dossier `apercu/` si tu peux les afficher (`accueil.jpg`, `projet-1.jpg`, `projet-2.jpg`, `projet-3.jpg`, `outils.jpg`, `accueil-sombre.jpg`, `mobile.jpg`). Sinon, donne le lien de l'aperçu : https://github.com/gab-spie/portfolio-template#readme, et demande-lui de l'ouvrir avant de continuer.
+3. **Décris ce qu'elle voit**, en mots simples, section par section :
+   - **L'accueil** : son nom en très grand, une phrase d'accroche, une photo, des logos (école, entreprise), un bouton vers les projets.
+   - **Une bande d'images** qui défile en dessous, avec des captures de ses projets.
+   - **Une grande phrase** qui s'allume mot par mot quand on descend.
+   - **Les projets** : une grande carte par projet, chacune avec sa propre couleur. La page entière change de couleur à chaque projet.
+   - **Un schéma en étapes** (optionnel) : un fonctionnement présenté en 2 à 4 étapes.
+   - **Ses outils** : un clavier où chaque touche affiche une explication, et deux bandes d'outils qui défilent.
+   - **D'autres projets** plus petits (optionnel), puis **un contact**.
+   - Le site existe en **clair, sombre ou automatique**, en **français et en anglais**, et sur mobile.
+4. **Précise que tout ce qu'elle voit est fictif** (la personne, les projets, les chiffres) : ce sera remplacé par son contenu.
+5. **Demande-lui** si ce style lui convient et quelles sections elle veut garder (schéma, outils, autres projets, contact). Le design et les animations ne changent pas : seul le contenu change. Puis passe à l'étape 1.
 
 ## Étape 1. L'entretien
 
-Pose les questions par petits groupes (2 ou 3 à la fois), pas tout d'un coup. Reformule ce que tu as compris avant de passer à la suite.
+**Rythme, à respecter strictement :**
+- Ne montre **jamais** la liste complète des questions. Envoie uniquement la partie A (5 questions au plus), puis **attends les réponses**.
+- Ensuite, une partie par message : B, puis C, puis D, puis E.
+- Pour les projets (partie C), traite **un projet à la fois**, avec 3 questions par message : d'abord de quoi il s'agit et son rôle, puis le résultat et les points clés, puis les images et les couleurs.
+- Reformule ce que tu as compris avant de passer à la suite.
+- Si la personne a rempli [QUESTIONNAIRE.md](QUESTIONNAIRE.md), lis-le d'abord. Ne repose pas ce qu'elle a déjà répondu : pose seulement les questions restantes, puis propose les phrases et les palettes de couleurs.
 Pose des questions ouvertes. Ne glisse pas de réponse dans la question (« tu as sûrement utilisé Python ? »). Ne pousse pas vers un secteur, un outil ou un style. Si une réponse est floue, demande un exemple concret.
 
 ### A. Contexte
@@ -43,7 +66,7 @@ Pose des questions ouvertes. Ne glisse pas de réponse dans la question (« tu a
 9. Faut-il afficher « mis à jour le... » ? Si oui, mets la date du jour dans `site.miseAJour` (`AAAA-MM-JJ`). Sinon, retire la clé.
 
 ### C. Les projets principaux
-10. Combien de projets veut-elle mettre en avant ? Conseille 1 à 4 (le site s'adapte, 1 seul est possible).
+10. Combien de projets veut-elle mettre en avant ? Conseille 1 à 4 pour garder un site lisible, mais n'en limite pas le nombre : le site s'adapte (1 seul est possible, davantage aussi).
 11. Pour **chaque** projet :
     - Nom court (`nom`, sert dans la bande d'images).
     - De quoi s'agit-il, pour qui, dans quel contexte (école, entreprise, projet personnel, client) ?
@@ -60,7 +83,7 @@ Pose des questions ouvertes. Ne glisse pas de réponse dans la question (« tu a
     - `texte` : couleur du texte, claire.
     - `accent` : couleur d'accent (résultat, mots en `<em>` du titre, chiffres, traits).
     - `fondSombre` (option) : un fond un peu différent pour le thème sombre.
-    Demande d'abord si la personne a des couleurs en tête (sa marque, celle du client, une couleur qu'elle aime). Si elle n'a pas d'avis, propose 3 palettes cohérentes avec l'univers du projet et laisse-la choisir.
+    Demande d'abord si la personne a des couleurs en tête (sa marque, celle du client, une couleur qu'elle aime). Si elle n'a pas d'avis, propose 3 palettes cohérentes avec l'univers du projet, chacune décrite en mots (« bleu nuit avec un accent vert ») et avec ses codes `#rrggbb`, et laisse-la choisir.
     Vérifie le contraste : au moins 4,5 pour 1 entre `texte` et `fond`, au moins 3 pour 1 entre `accent` et `fond` (et `fondSombre` s'il existe). Si une couleur demandée ne passe pas, dis-le et propose la teinte la plus proche qui passe. Deux projets voisins ne doivent pas avoir la même couleur de fond.
 
 ### D. La phrase qui s'allume au défilement
