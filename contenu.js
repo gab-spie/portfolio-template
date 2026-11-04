@@ -18,10 +18,10 @@ window.CONTENU = {
     "credit": {
       "afficher": true,
       "texte": {
-        "fr": "Template par",
-        "en": "Template by"
+        "fr": "Template fait par",
+        "en": "Template made by"
       },
-      "nom": "Gabin Spiewak",
+      "nom": "Spie",
       "lien": "https://github.com/gab-spie/portfolio-template"
     }
   },

@@ -77,7 +77,7 @@ Il faut Python 3 ([python.org](https://www.python.org/downloads/)). Sous Windows
 - **Captures** : la première est la grande, les suivantes flottent autour. `"type": "mobile"` donne un cadre vertical. `"ouvrable": false` empêche de l'ouvrir en grand. `"bande": false` la retire de la bande d'images.
 - **Outils** : tu définis un `catalogue` (nom, logo), puis tu écris juste `"Python"` dans les listes.
 - **Sections optionnelles** : `phrase`, `schema`, `outils`, `autres`, `contact`. Retire la clé pour supprimer la section.
-- **Crédit** : `site.credit.afficher: false` retire la mention « Template par... ».
+- **Crédit** : `site.credit.afficher: false` retire la mention « Template fait par... ».
 
 Tous les champs sont décrits dans le [README](README.md#champs).
 

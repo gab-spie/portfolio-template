@@ -55,7 +55,7 @@ Nombre de projets à présenter (1 à 4 conseillés, davantage possible) :
 16. D'autres projets plus petits :
 17. E-mail, LinkedIn, autres liens, période de disponibilité, PDF du portfolio :
 18. L'adresse du site, si tu la connais :
-19. Garder ou retirer la mention « Template par... » en bas de page :
+19. Garder ou retirer la mention « Template fait par... » en bas de page :
 
 ## F. Mise en ligne
 

@@ -97,7 +97,7 @@ Pose des questions ouvertes. Ne glisse pas de réponse dans la question (« tu a
 16. **Autres projets** (`autres`) : projets plus petits, avec ou sans image, avec `taille` et `miseEnPage` au choix (voir le README). Sinon, supprime la clé `autres`.
 17. **Contact** (`contact`) : e-mail, LinkedIn, autres liens. La phrase de disponibilité (« Disponible pour un stage à partir de... ») va dans `contact.titre`. Un PDF du portfolio ? (`contact.pdf`, voir le README pour l'exporter)
 18. Adresse finale du site si elle la connaît (`site.url`), pour les aperçus de partage.
-19. Mention « Template par... » en bas de page (`site.credit`) : la laisser, ou la retirer avec `"afficher": false`.
+19. Mention « Template fait par... » en bas de page (`site.credit`) : la laisser, ou la retirer avec `"afficher": false`.
 
 ### F. Mise en ligne et PDF
 20. Veux-tu mettre le site en ligne, avec une adresse que tu peux donner à des recruteurs ou des clients ? Explique en deux phrases ce qu'est Vercel (un hébergeur gratuit pour un portfolio, sans commande, qui met le site à jour à chaque modification) et recommande-le. Demande si elle a déjà un compte GitHub (gratuit, nécessaire pour Vercel). Précise que tu ne créeras aucun compte et ne publieras rien sans son accord.

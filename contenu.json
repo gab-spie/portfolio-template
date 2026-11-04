@@ -13,8 +13,8 @@
     "miseAJour": "2026-11-03",
     "credit": {
       "afficher": true,
-      "texte": { "fr": "Template par", "en": "Template by" },
-      "nom": "Gabin Spiewak",
+      "texte": { "fr": "Template fait par", "en": "Template made by" },
+      "nom": "Spie",
       "lien": "https://github.com/gab-spie/portfolio-template"
     }
   },
