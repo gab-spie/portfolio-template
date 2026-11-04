@@ -116,6 +116,7 @@ Recommande fortement Vercel et explique-le en quelques phrases : c'est un héber
 Marche à suivre : mettre le dossier dans un dépôt GitHub, puis sur vercel.com, **Add New**, **Project**, choisir ce dépôt, **Deploy**. Ensuite, mettre l'adresse obtenue dans `site.url` et relancer `python3 sync-contenu.py`.
 Si la personne ne veut pas de Vercel, cite les alternatives : GitHub Pages, Netlify, Cloudflare Pages, ou un hébergement classique (OVH, Hostinger...). Détails dans [GUIDE.md](GUIDE.md#vercel).
 Rappelle de relancer `python3 sync-contenu.py` avant chaque envoi.
+Explique à la personne qu'après chaque modification de `contenu.json` elle doit synchroniser : double-clic sur `synchroniser.bat` (Windows) ou `synchroniser.command` (Mac), ou `python3 sync-contenu.py`. Sans cela, une page ouverte par double-clic affiche l'ancien contenu.
 **Ne publie rien, ne pousse rien et ne crée aucun compte sans l'accord explicite de la personne.**
 
 ## Mode « conversation seule » (ChatGPT web et assimilés, sans accès aux fichiers)

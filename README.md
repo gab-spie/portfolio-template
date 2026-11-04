@@ -57,12 +57,19 @@ python3 -m http.server 8000
 # puis ouvre http://localhost:8000
 ```
 
-Tu peux aussi ouvrir `index.html` directement. La page lit alors `contenu.js` (copie de `contenu.json`).
-**Après chaque modification de `contenu.json`, lance :**
+Tu peux aussi ouvrir `index.html` directement (double-clic). La page lit alors `contenu.js`, une copie de `contenu.json` que le navigateur accepte de lire sans serveur.
 
-```bash
-python3 sync-contenu.py
-```
+> **Important : après chaque modification de `contenu.json`, synchronise.**
+> Sinon, une page ouverte par double-clic affiche l'**ancien** contenu.
+> - **Windows** : double-clique sur `synchroniser.bat`.
+> - **Mac** : double-clique sur `synchroniser.command` (la première fois, clic droit, puis **Ouvrir**).
+> - **Ou en ligne de commande** :
+>
+> ```bash
+> python3 sync-contenu.py
+> ```
+>
+> Il faut Python 3, gratuit sur [python.org](https://www.python.org/downloads/). Sur un serveur (Vercel, `http.server`), la page lit directement `contenu.json` : la synchro ne sert alors qu'à mettre à jour l'aperçu de partage.
 
 Ce script vérifie ton JSON, signale les images introuvables, met à jour `contenu.js` et remplit les balises de partage (titre, description, image d'aperçu pour LinkedIn, WhatsApp, Slack...) dans `index.html`.
 
@@ -159,6 +166,7 @@ Un fonctionnement en étapes reliées par des flèches (une méthode, une chaîn
 | `index.html` | Le site (design et animations). |
 | `contenu.js` | Copie générée de `contenu.json` pour l'ouverture directe. |
 | `sync-contenu.py` | Vérifie le contenu et met à jour `contenu.js` et les balises de partage. |
+| `synchroniser.bat`, `synchroniser.command` | Double-clic (Windows, Mac) pour lancer la synchronisation sans ligne de commande. |
 | `exporter-pdf.js` | Export PDF avec Playwright. |
 | `GUIDE.md` | Guide complet pas à pas (FR et EN). |
 | `INSTRUCTIONS-IA.md`, `CLAUDE.md`, `AGENTS.md` | Consignes pour qu'une IA t'aide à tout remplir. |
@@ -204,7 +212,10 @@ python3 -m http.server 8000   # then open http://localhost:8000
 python3 sync-contenu.py       # run after every change to contenu.json
 ```
 
-Opening `index.html` directly also works: the page then reads `contenu.js`, a generated copy of `contenu.json`. `sync-contenu.py` validates your JSON, reports missing images, refreshes `contenu.js` and fills the share tags (title, description, preview image) in `index.html`.
+Opening `index.html` directly (double-click) also works: the page then reads `contenu.js`, a generated copy of `contenu.json`.
+**After every change to `contenu.json`, synchronise**, otherwise a page opened by double-click shows the **old** content. On Windows, double-click `synchroniser.bat`. On Mac, double-click `synchroniser.command` (the first time, right-click, then **Open**). Python 3 is required (free at [python.org](https://www.python.org/downloads/)). On a server (Vercel, `http.server`) the page reads `contenu.json` directly, so syncing only refreshes the share preview.
+
+ `sync-contenu.py` validates your JSON, reports missing images, refreshes `contenu.js` and fills the share tags (title, description, preview image) in `index.html`.
 
 ## Export a PDF
 

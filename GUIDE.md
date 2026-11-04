@@ -62,7 +62,11 @@ python3 sync-contenu.py
 
 Ce script vérifie ton JSON, signale les images introuvables, met à jour `contenu.js` (pour l'ouverture directe du fichier) et remplit les balises de partage (l'aperçu qui s'affiche sur LinkedIn, WhatsApp, Slack). Sans lui, l'aperçu de partage reste celui de l'exemple.
 
-Il faut Python 3 ([python.org](https://www.python.org/downloads/)). Sous Windows, la commande s'appelle parfois `python` ou `py` au lieu de `python3`.
+Sans ligne de commande : **Windows**, double-clique sur `synchroniser.bat`. **Mac**, double-clique sur `synchroniser.command` (la première fois, clic droit, puis **Ouvrir**, car le Mac demande une confirmation). Une fenêtre s'ouvre, affiche « OK » et attend que tu appuies sur une touche.
+
+Il faut Python 3 ([python.org](https://www.python.org/downloads/)). Sous Windows, coche « Add python.exe to PATH » pendant l'installation. En ligne de commande, la commande s'appelle parfois `python` ou `py` au lieu de `python3`.
+
+**Pourquoi cette étape ?** Le contenu est dans `contenu.json`, mais un navigateur refuse de lire un fichier voisin quand tu ouvres `index.html` par double-clic. La page lit alors `contenu.js`, une copie, que la synchronisation met à jour. Sur Vercel, ou avec `python3 -m http.server`, la page lit `contenu.json` directement : la synchronisation ne sert plus qu'à mettre à jour l'aperçu de partage (LinkedIn, WhatsApp...).
 
 ## 5. Comment les champs fonctionnent
 
@@ -188,7 +192,9 @@ After **every** change to `contenu.json`:
 python3 sync-contenu.py
 ```
 
-It validates your JSON, flags missing images, refreshes `contenu.js` (used when you open the file directly) and fills the share tags (the preview shown on LinkedIn, WhatsApp, Slack). Without it, the share preview stays the example one.
+It validates your JSON, flags missing images, refreshes `contenu.js` (used when you open the file directly) and fills the share tags (the preview shown on LinkedIn, WhatsApp, Slack).
+
+No command line needed: on **Windows** double-click `synchroniser.bat`; on **Mac** double-click `synchroniser.command` (the first time, right-click, then **Open**). **Why this step?** The content lives in `contenu.json`, but a browser refuses to read a neighbouring file when you open `index.html` by double-click, so the page reads `contenu.js`, a copy that the sync refreshes. On Vercel or with `python3 -m http.server`, the page reads `contenu.json` directly and the sync only refreshes the share preview. Without it, the share preview stays the example one.
 
 You need Python 3 ([python.org](https://www.python.org/downloads/)). On Windows, the command is sometimes `python` or `py` instead of `python3`.
 
