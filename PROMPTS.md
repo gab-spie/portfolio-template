@@ -54,7 +54,7 @@ Voici le ZIP d'un modèle de portfolio. Je veux que tu l'adaptes à moi.
 4. Après chaque modification de contenu.json, lance python3 sync-contenu.py.
 5. À la fin, rends-moi le dossier complet en un seul ZIP téléchargeable, avec index.html à la racine, puis guide-moi pour la mise en ligne, une étape à la fois.
 
-N'utilise pas Codex : fais tout ici avec Python. Si je te montre un autre portfolio fait avec ce template, c'est déjà ce design : ne recrée rien. Si je demande une section ou un bouton qui n'existe pas, dis-le-moi avant de toucher au code.
+Ne lance pas Codex sans me demander : dis-moi d'abord ce qu'il apporterait et s'il entame une limite d'utilisation. Si je te montre un autre portfolio fait avec ce template, c'est déjà ce design : ne recrée rien. Si je demande une section ou un bouton qui n'existe pas, dis-le-moi avant de toucher au code.
 
 Important : ne recrée pas le site et ne change pas sa technique (HTML, CSS et JavaScript, sans framework ni build). Modifie seulement contenu.json et le dossier img/, pour garder toutes les animations.
 
