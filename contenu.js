@@ -1,7 +1,7 @@
 // Fichier généré par sync-contenu.py à partir de contenu.json. Ne le modifie pas à la main.
 window.CONTENU = {
   "site": {
-    "url": "https://portfolio-template-orpin-kappa.vercel.app/",
+    "url": "https://portfolio-spie.vercel.app/",
     "titre": {
       "fr": "Léa Verdier · Portfolio",
       "en": "Léa Verdier · Portfolio"
