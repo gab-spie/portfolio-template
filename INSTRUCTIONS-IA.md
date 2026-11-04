@@ -38,6 +38,7 @@ La personne n'est peut-être pas à l'aise avec l'informatique. Elle ne sait pas
    - un compte **Vercel** (gratuit, vercel.com) : c'est lui qui met le site sur Internet. On s'y inscrit avec le bouton **Continue with GitHub**, sans autre mot de passe.
    Propose-lui de créer ces comptes pendant l'entretien, à son rythme. Ce n'est pas obligatoire pour remplir le portfolio.
 4. **Les connecteurs sont facultatifs.** Sans eux, tout marche : la personne suit tes étapes (étape 5, chemin B). Si elle veut que tu fasses la mise en ligne toi-même et que ton application le permet, explique-lui où les activer : dans les paramètres de l'application, rubrique des connecteurs (ou applications), puis **GitHub** et **Vercel**, et **Connecter**. Ne lui promets pas un menu que tu ne vois pas : si tu ne sais pas où il se trouve dans son application, dis-le et passe au chemin B.
+5. **Si tu es ChatGPT** : l'application GitHub de ChatGPT sert surtout à lire, pas à créer un dépôt ni à y envoyer des fichiers. Ne demande pas à la personne de connecter quoi que ce soit, et prends directement le chemin B. Si tu peux lancer du code, rends-lui à la fin le dossier complet en un seul ZIP à télécharger.
 
 ## Étape 0. Montre d'abord à quoi ressemble le portfolio
 

@@ -11,6 +11,7 @@ Ce guide explique tout, pas à pas : récupérer le template, le remplir, le tes
   - **GitHub** (github.com) : l'endroit où les fichiers de ton site sont rangés ;
   - **Vercel** (vercel.com) : le service qui met ton site sur Internet. Tu t'y inscris avec **Continue with GitHub**, sans nouveau mot de passe.
 - **Les connecteurs : facultatifs.** Certaines applications d'IA (par exemple Claude) peuvent se connecter à ton GitHub et à ton Vercel. L'IA peut alors mettre le site en ligne elle-même, avec ton accord. Tu les actives dans les paramètres de l'application, rubrique des connecteurs, puis **GitHub** et **Vercel**. **Sans connecteur, tout marche aussi** : l'IA te guide clic par clic (section 8).
+- **Avec ChatGPT** : rien à connecter. Envoie-lui le ZIP, il te rend ton portfolio en ZIP, puis il te guide pour la mise en ligne.
 - **Python** : seulement pour la synchronisation (section 4). Si ton IA peut lancer des commandes, elle s'en occupe.
 
 
@@ -185,6 +186,7 @@ Quel que soit l'hébergeur : pas de commande de build, et lance `python3 sync-co
 - **An AI assistant**: Claude, ChatGPT, Gemini or another. It is easier if it can read files (send it the ZIP).
 - **To publish**, two free accounts, which you can create now, during the interview or at the end: **GitHub** (github.com), where your site's files are stored, and **Vercel** (vercel.com), which puts the site online. Sign up to Vercel with **Continue with GitHub**.
 - **Connectors are optional.** Some AI apps (Claude, for example) can connect to your GitHub and Vercel, and then publish the site for you, with your approval. Turn them on in the app settings, connectors section. **Without connectors everything still works**: the AI guides you click by click (section 7).
+- **With ChatGPT**: nothing to connect. Send it the ZIP, it returns your portfolio as a ZIP, then guides you to publish it.
 - **Python**: only for the sync (section 4). If your AI can run commands, it handles it.
 
 
