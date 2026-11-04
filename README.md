@@ -4,7 +4,8 @@
 
 <p align="center"><a href="https://portfolio-spie.vercel.app"><b>Voir la démo en ligne</b></a> · <a href="https://portfolio-spie.vercel.app/?lang=en">Live demo (English)</a></p>
 
-<p align="center"><img src="apercu/accueil.jpg" alt="Page d'accueil du template : nom en grand, photo, logos et bouton vers les projets" width="100%"></p>
+<p align="center"><a href="https://portfolio-spie.vercel.app"><img src="apercu/demo.gif" alt="Démonstration animée du template : ouverture, bande d'images, phrase qui s'allume, cartes projets qui changent la couleur de la page, clavier d'outils et thème sombre" width="100%"></a></p>
+<p align="center"><sub>Clique sur l'animation pour ouvrir la démo.</sub></p>
 
 <table>
 <tr>
