@@ -293,6 +293,17 @@
 
   .card .learned { margin: 0 0 clamp(10px, 2svh, 18px); font-size: clamp(0.88rem, 1.8svh, 1rem); line-height: 1.45; padding-left: 14px; border-left: 2px solid var(--c-accent); max-width: 52ch; opacity: 0.85; }
   .card .learned b { color: var(--c-accent); }
+  .card .more { margin: 0 0 clamp(10px, 2svh, 18px); max-width: 54ch; }
+  .card .more summary { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; cursor: pointer; list-style: none; font-weight: 700; font-size: clamp(0.88rem, 1.8svh, 1rem); color: var(--c-accent); }
+  .card .more summary::-webkit-details-marker { display: none; }
+  .card .more summary::after { content: "+"; font-size: 1.3em; line-height: 1; transition: transform 0.3s var(--ease); }
+  .card .more[open] summary::after { transform: rotate(45deg); }
+  .card .more summary:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .card .more > div { font-size: clamp(0.88rem, 1.8svh, 1rem); line-height: 1.5; opacity: 0.85; padding: 2px 0 4px 14px; border-left: 2px solid var(--c-accent); }
+  .card .more[open] > div { animation: more-in 0.4s var(--ease); }
+  @keyframes more-in { from { opacity: 0; transform: translateY(-6px); } }
+  @media (prefers-reduced-motion: reduce) { .card .more[open] > div { animation: none; } .card .more summary::after { transition: none; } }
+  @media print { .card .more summary { display: none; } }
 
   .side > :not(.me) { grid-column: 2; }
   .side .orgs { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; margin: -4px 0 18px; }
@@ -508,6 +519,7 @@
     ticker: { fr: 'Captures des projets, à faire glisser', en: 'Project screenshots, drag to scroll' },
     tools: { fr: 'Outils', en: 'Tools' },
     see: { fr: 'Voir les projets', en: 'See the projects' },
+    more: { fr: 'En savoir plus', en: 'Read more' },
     projects: { fr: 'Projets', en: 'Projects' },
     others: { fr: 'Autres projets', en: 'Other projects' },
     toolsTitle: { fr: 'Mes outils', en: 'My tools' },
@@ -690,6 +702,8 @@
         var pts = list(p.points);
         if (pts.length) h.push('<ul>' + pts.map(function (x) { return tag('li', '', x); }).join('') + '</ul>');
         if (!isEmpty(p.appris)) h.push(tag('p', 'learned', p.appris));
+        // texte long facultatif, déplié au clic (« En savoir plus »)
+        if (!isEmpty(p.plus)) h.push('<details class="more">' + tag('summary', '', isEmpty(p.plusLibelle) ? UI.more : p.plusLibelle) + tag('div', '', p.plus) + '</details>');
         var chf = list(p.chiffres);
         if (chf.length) h.push('<div class="numbers">' + chf.map(function (x) { return tag('span', '', x); }).join('') + '</div>');
         if (!isEmpty(p.noteChiffres)) h.push(tag('p', 'note', p.noteChiffres, ' style="font-size:.82rem;opacity:.6;margin:12px 0 18px"'));
@@ -1242,6 +1256,9 @@
       k.addEventListener('focus', function () { show(k); });
       k.addEventListener('click', function () { show(k); });
     });
+
+    // à l'impression, les textes « En savoir plus » sont dépliés
+    addEventListener('beforeprint', function () { document.querySelectorAll('details.more').forEach(function (d) { d.open = true; }); });
 
     // langue : français ou anglais
     (function () {

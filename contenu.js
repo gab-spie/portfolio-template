@@ -175,6 +175,10 @@ window.CONTENU = {
           "fr": "<b>Ce que j'ai appris :</b> écouter les équipes avant de dessiner, et mesurer ce qui compte vraiment.",
           "en": "<b>What I learned:</b> listen to the teams before designing, and measure what really matters."
         },
+        "plus": {
+          "fr": "Au départ, chaque équipe suivait ses indicateurs dans son propre tableur. J'ai passé deux semaines à les observer avant de proposer quoi que ce soit, puis j'ai construit une première version en quelques jours pour la tester avec eux.<br><br>Les retours ont changé l'outil : moins de graphiques, des alertes plus claires, et une vue mobile pour les équipes sur le terrain.",
+          "en": "At first, each team tracked its figures in its own spreadsheet. I spent two weeks watching how they worked before proposing anything, then built a first version in a few days to test it with them.<br><br>Their feedback changed the tool: fewer charts, clearer alerts, and a mobile view for field teams."
+        },
         "outils": [
           "Claude Code",
           "Next.js",

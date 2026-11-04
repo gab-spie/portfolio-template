@@ -22,7 +22,7 @@ Dis-le **avant** d'agir, puis propose l'équivalent :
 - **Une section « Expériences »** : une carte `projets` par expérience (titre, résultat, points, couleurs), ou `autres` pour les plus petites.
 - **« À propos »** : `identite.texte` (court) et la `phrase` qui s'allume.
 - **« Engagements », « Formation », associations** : `autres`, et `identite.logos`.
-- **Un bouton « En savoir plus »** : il n'existe pas. Garde des `points` courts et `appris`.
+- **Un bouton « En savoir plus »** : il existe, champ `plus` d'un projet (texte long déplié au clic). Garde quand même des `points` courts : le premier coup d'œil doit suffire.
 - **Des couleurs pastel** : en `texte` ou en `accent`, sur un fond de projet sombre.
 - **La couleur de l'accueil ou des lettres du nom** : ne se règle pas dans `contenu.json`.
 - **Les lettres A et I du nom qui forment « AI »** : déjà prévu, avec `[[IA]]` ou `[[AI]]` dans l'accroche.
@@ -118,6 +118,7 @@ Pose des questions ouvertes. Ne glisse pas de réponse dans la question (« tu a
     - Le résultat (`resultat`) : une phrase forte. **Chiffres réels uniquement**, avec leur période de mesure. Sinon, un résultat qualitatif honnête.
     - 2 à 5 points clés (`points` : ce qui a été fait, concrètement).
     - Ce qu'elle a appris (`appris`, une phrase, optionnel).
+    - Un texte plus long pour qui veut les détails (`plus`, optionnel) : il reste caché derrière un bouton « En savoir plus ». Propose-le si elle a beaucoup à dire sur ce projet, plutôt que d'allonger les points.
     - Outils ou méthodes utilisés (`outils`, optionnel).
     - Captures ou visuels disponibles. **Dis où les déposer** : dans le dossier `img/`, avec un nom court sans espaces (`nom-du-projet-accueil.jpg`), et demande-lui de te donner les noms de fichiers. Sont-ils confidentiels ? Faut-il flouter des noms, des prix, des visages, des données clients ?
     - Une image doit-elle rester non ouvrable en grand ? (`"ouvrable": false`)

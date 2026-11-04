@@ -41,6 +41,7 @@ function verifierCopie() {
       await page.evaluate(() => document.fonts.ready);
       await page.waitForTimeout(800);
       await page.emulateMedia({ media: 'print' });
+      await page.evaluate(() => document.querySelectorAll('details.more').forEach(d => { d.open = true; }));
       const out = path.join(__dirname, 'portfolio-' + lang + '.pdf');
       await page.pdf({ path: out, format: 'A4', printBackground: true, margin: { top: '12mm', bottom: '12mm', left: '12mm', right: '12mm' } });
       console.log('OK ' + out);
