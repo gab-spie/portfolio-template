@@ -1,0 +1,785 @@
+// Fichier généré par sync-contenu.py à partir de contenu.json. Ne le modifie pas à la main.
+window.CONTENU = {
+  "site": {
+    "url": "https://mon-portfolio.vercel.app/",
+    "titre": {
+      "fr": "Léa Verdier · Portfolio",
+      "en": "Léa Verdier · Portfolio"
+    },
+    "description": {
+      "fr": "Étudiante en gestion, je construis des outils web et des automatisations pour des équipes et des artisans.",
+      "en": "Management student building web tools and automations for teams and craftspeople."
+    },
+    "imagePartage": "img/og.jpg",
+    "couleurNavigateur": "#f4efe6",
+    "langueParDefaut": "auto",
+    "boutonLangue": true,
+    "miseAJour": "2026-11-03",
+    "credit": {
+      "afficher": true,
+      "texte": {
+        "fr": "Template par",
+        "en": "Template by"
+      },
+      "nom": "Gabin Spiewak",
+      "lien": "https://github.com/gab-spie/portfolio-template"
+    }
+  },
+  "identite": {
+    "prenom": "Léa",
+    "nom": "Verdier",
+    "etiquette": {
+      "fr": "Portfolio",
+      "en": "Portfolio"
+    },
+    "accroche": {
+      "fr": "En master de gestion, je transforme des idées en outils qui fonctionnent vraiment, pour des équipes comme pour des artisans.",
+      "en": "In a management master's, I turn ideas into tools that actually work, for teams and for craftspeople."
+    },
+    "texte": {
+      "fr": "Étudiante en master à l'Institut Horizon, en alternance chez Nordwind Labs.",
+      "en": "Master's student at Institut Horizon, on a work-study programme at Nordwind Labs."
+    },
+    "photo": {
+      "src": "img/profil.jpg",
+      "alt": "Portrait de Léa Verdier (image d'exemple)",
+      "largeur": 720,
+      "hauteur": 900
+    },
+    "logos": [
+      {
+        "nom": "Institut Horizon",
+        "src": "img/logos/ecole-exemple.svg",
+        "lien": "https://example.com/",
+        "largeur": 105
+      },
+      {
+        "nom": "Nordwind Labs",
+        "src": "img/logos/entreprise-exemple.svg",
+        "lien": "https://example.com/",
+        "largeur": 112
+      }
+    ],
+    "miseAJourTexte": {
+      "fr": "Ce portfolio évolue avec mes projets : dernière mise à jour le {date}.",
+      "en": "This portfolio grows with my projects: last updated on {date}."
+    },
+    "bouton": {
+      "fr": "Voir les projets",
+      "en": "See the projects"
+    }
+  },
+  "phrase": {
+    "fr": "Une équipe qui perd du temps sur ses livraisons, un atelier qui veut vendre en ligne, une étudiante qui veut mieux réviser : trois problèmes, trois outils construits sur mesure.",
+    "en": "A team losing time on deliveries, a workshop that wants to sell online, a student who wants to revise better: three problems, three tools built to measure."
+  },
+  "catalogue": {
+    "Claude Code": {
+      "logo": "img/logos/claude.svg"
+    },
+    "Python": {
+      "logo": "img/logos/python.svg"
+    },
+    "Notion": {
+      "logo": "img/logos/notion.svg",
+      "mono": true
+    },
+    "Vercel": {
+      "logo": "img/logos/vercel.svg",
+      "mono": true
+    },
+    "Next.js": {
+      "logo": "img/logos/nextjs.svg",
+      "mono": true
+    },
+    "TypeScript": {
+      "logo": "img/logos/typescript.svg"
+    },
+    "Docker": {
+      "logo": "img/logos/docker.svg"
+    },
+    "n8n": {
+      "logo": "img/logos/n8n.svg"
+    },
+    "Make": {
+      "logo": "img/logos/make.svg"
+    },
+    "Google Sheets": {
+      "logo": "img/logos/googlesheets.svg"
+    },
+    "Gmail": {
+      "logo": "img/logos/gmail.svg"
+    },
+    "Telegram": {
+      "logo": "img/logos/telegram.svg"
+    },
+    "HTML": {
+      "logo": "img/logos/html5.svg"
+    },
+    "Excel": {
+      "logo": "img/logos/excel.svg"
+    },
+    "GA4": {
+      "logo": "img/logos/googleanalytics.svg"
+    },
+    "Search Console": {
+      "logo": "img/logos/googlesearchconsole.svg"
+    }
+  },
+  "projets": {
+    "titre": {
+      "fr": "Projets",
+      "en": "Projects"
+    },
+    "liste": [
+      {
+        "id": "orbite",
+        "nom": "Orbite",
+        "couleurs": {
+          "fond": "#101820",
+          "texte": "#f3f1ea",
+          "accent": "#3ddc97",
+          "fondSombre": "#0b1218"
+        },
+        "marque": {
+          "texte": "ORBITE",
+          "sous": "Livraisons"
+        },
+        "titre": {
+          "fr": "Un tableau de bord de livraisons <em>chez Nordwind Labs</em>",
+          "en": "A delivery dashboard <em>at Nordwind Labs</em>"
+        },
+        "accroche": {
+          "fr": "Chez Nordwind Labs, une entreprise de logistique fictive, je suis en alternance en gestion. J'ai construit un tableau de bord qui rassemble toutes les tournées au même endroit.",
+          "en": "At Nordwind Labs, a fictional logistics company, I am on a work-study programme in management. I built a dashboard that brings every delivery round together in one place."
+        },
+        "resultat": {
+          "fr": "Le point du matin passe de 45 minutes à 10 minutes",
+          "en": "The morning review goes from 45 minutes down to 10"
+        },
+        "points": [
+          {
+            "fr": "<b>Une vue unique</b> : livraisons du jour, retards et satisfaction client.",
+            "en": "<b>One single view</b>: today's deliveries, delays and customer satisfaction."
+          },
+          {
+            "fr": "<b>Une carte des tournées</b> mise à jour toutes les 5 minutes.",
+            "en": "<b>A map of the rounds</b>, refreshed every 5 minutes."
+          },
+          {
+            "fr": "<b>Une version mobile</b> pour les chauffeurs, pensée pour une main.",
+            "en": "<b>A mobile version</b> for drivers, designed for one hand."
+          }
+        ],
+        "appris": {
+          "fr": "<b>Ce que j'ai appris :</b> écouter les équipes avant de dessiner, et mesurer ce qui compte vraiment.",
+          "en": "<b>What I learned:</b> listen to the teams before designing, and measure what really matters."
+        },
+        "outils": [
+          "Claude Code",
+          "Next.js",
+          "TypeScript",
+          "Vercel"
+        ],
+        "captures": [
+          {
+            "src": "img/orbite-dashboard.jpg",
+            "alt": {
+              "fr": "Tableau de bord Orbite : indicateurs du jour et activité",
+              "en": "Orbite dashboard: today's indicators and activity"
+            },
+            "legende": {
+              "fr": "le tableau de bord",
+              "en": "the dashboard"
+            },
+            "largeur": 1440,
+            "hauteur": 900
+          },
+          {
+            "src": "img/orbite-carte.jpg",
+            "alt": {
+              "fr": "Carte des tournées Orbite",
+              "en": "Orbite round map"
+            },
+            "legende": {
+              "fr": "la carte des tournées",
+              "en": "the round map"
+            },
+            "largeur": 1280,
+            "hauteur": 800
+          },
+          {
+            "src": "img/orbite-mobile.jpg",
+            "type": "mobile",
+            "alt": {
+              "fr": "Orbite sur mobile : liste des tournées",
+              "en": "Orbite on mobile: list of rounds"
+            },
+            "legende": {
+              "fr": "sur mobile",
+              "en": "on mobile"
+            },
+            "largeur": 780,
+            "hauteur": 1688
+          }
+        ]
+      },
+      {
+        "id": "atelier-lune",
+        "nom": "Atelier Lune",
+        "couleurs": {
+          "fond": "#2a1a14",
+          "texte": "#f7ede4",
+          "accent": "#ff8a5b",
+          "fondSombre": "#1d110c"
+        },
+        "marque": {
+          "texte": "ATELIER",
+          "sous": "Lune"
+        },
+        "titre": {
+          "fr": "Atelier Lune, <em>le site d'une céramiste</em>",
+          "en": "Atelier Lune, <em>a ceramist's website</em>"
+        },
+        "accroche": {
+          "fr": "Le site d'un atelier de céramique fictif, avec une petite boutique en ligne. Je l'ai créé et je m'occupe de son référencement.",
+          "en": "The website of a fictional ceramics workshop, with a small online shop. I built it and I look after its search ranking."
+        },
+        "resultat": {
+          "fr": "+48 % de visites en trois mois",
+          "en": "+48% visits in three months"
+        },
+        "points": [
+          {
+            "fr": "<b>Le site</b> et sa boutique, simples à mettre à jour.",
+            "en": "<b>The website</b> and its shop, easy to update."
+          },
+          {
+            "fr": "<b>30 pages</b> écrites avec les vraies questions des clients.",
+            "en": "<b>30 pages</b> written around real customer questions."
+          }
+        ],
+        "chiffres": [
+          {
+            "fr": "<b>+48 %</b> de visites de juin à août",
+            "en": "<b>+48%</b> visits from June to August"
+          },
+          {
+            "fr": "<b>+12</b> commandes par mois",
+            "en": "<b>+12</b> orders a month"
+          }
+        ],
+        "noteChiffres": {
+          "fr": "Chiffres d'exemple, à remplacer par vos vrais résultats.",
+          "en": "Sample figures, replace them with your real results."
+        },
+        "outils": [
+          "HTML",
+          "Vercel",
+          "Search Console",
+          "GA4"
+        ],
+        "captures": [
+          {
+            "src": "img/atelier-accueil.jpg",
+            "alt": {
+              "fr": "Page d'accueil du site Atelier Lune",
+              "en": "Atelier Lune home page"
+            },
+            "legende": {
+              "fr": "le site",
+              "en": "the website"
+            },
+            "largeur": 1440,
+            "hauteur": 900
+          },
+          {
+            "src": "img/atelier-mobile.jpg",
+            "type": "mobile",
+            "alt": {
+              "fr": "Site Atelier Lune sur mobile",
+              "en": "Atelier Lune on mobile"
+            },
+            "legende": {
+              "fr": "sur mobile",
+              "en": "on mobile"
+            },
+            "largeur": 780,
+            "hauteur": 1688,
+            "ouvrable": false
+          },
+          {
+            "src": "img/atelier-catalogue.jpg",
+            "alt": {
+              "fr": "Catalogue de la boutique Atelier Lune",
+              "en": "Atelier Lune shop catalogue"
+            },
+            "legende": {
+              "fr": "la boutique",
+              "en": "the shop"
+            },
+            "largeur": 1440,
+            "hauteur": 900
+          }
+        ]
+      },
+      {
+        "id": "cartable",
+        "nom": "Cartable",
+        "couleurs": {
+          "fond": "#14122b",
+          "texte": "#efeefb",
+          "accent": "#8b7cff",
+          "fondSombre": "#0e0c20"
+        },
+        "titre": {
+          "fr": "Cartable, <em>un assistant de révision</em>",
+          "en": "Cartable, <em>a revision assistant</em>"
+        },
+        "accroche": {
+          "fr": "Une application pour réviser avec des fiches et des quiz, qui choisit chaque jour ce qu'il faut revoir.",
+          "en": "An app to revise with flashcards and quizzes, which picks every day what needs another look."
+        },
+        "resultat": {
+          "fr": "Un rappel intelligent plutôt qu'un planning à suivre",
+          "en": "A smart reminder instead of a schedule to follow"
+        },
+        "points": [
+          {
+            "fr": "<b>Des fiches</b> créées à partir de vos cours.",
+            "en": "<b>Flashcards</b> created from your lessons."
+          },
+          {
+            "fr": "<b>Un suivi</b> des progrès par matière.",
+            "en": "<b>Progress tracking</b> by subject."
+          },
+          {
+            "fr": "<b>Une série</b> de jours d'affilée pour garder le rythme.",
+            "en": "<b>A streak</b> of consecutive days to keep the pace."
+          },
+          {
+            "fr": "<b>Aucun compte</b> à créer : tout reste sur l'appareil.",
+            "en": "<b>No account</b> needed: everything stays on the device."
+          }
+        ],
+        "outils": [
+          "Claude Code",
+          "Python",
+          "TypeScript"
+        ],
+        "captures": [
+          {
+            "src": "img/cartable-appli.jpg",
+            "alt": {
+              "fr": "Écran du jour de l'application Cartable",
+              "en": "Cartable today screen"
+            },
+            "legende": {
+              "fr": "l'écran du jour",
+              "en": "the daily screen"
+            },
+            "largeur": 1440,
+            "hauteur": 900
+          },
+          {
+            "src": "img/cartable-fiches.jpg",
+            "alt": {
+              "fr": "Suivi des progrès dans Cartable",
+              "en": "Progress tracking in Cartable"
+            },
+            "legende": {
+              "fr": "le suivi des progrès",
+              "en": "progress tracking"
+            },
+            "largeur": 1280,
+            "hauteur": 800
+          }
+        ]
+      }
+    ]
+  },
+  "schema": {
+    "titre": {
+      "fr": "Mon dispositif",
+      "en": "My setup"
+    },
+    "etapes": [
+      {
+        "logos": [
+          "Python"
+        ],
+        "titre": {
+          "fr": "Le script",
+          "en": "The script"
+        },
+        "texte": {
+          "fr": "Un script Python récupère les données chaque matin et les met au propre.",
+          "en": "A Python script collects the data every morning and cleans it up."
+        }
+      },
+      {
+        "logos": [
+          "Docker"
+        ],
+        "titre": {
+          "fr": "Le conteneur",
+          "en": "The container"
+        },
+        "texte": {
+          "fr": "Tout tourne dans un conteneur Docker, identique sur tous les ordinateurs.",
+          "en": "Everything runs in a Docker container, identical on every computer."
+        }
+      },
+      {
+        "logos": [
+          "Telegram"
+        ],
+        "titre": {
+          "fr": "L'alerte",
+          "en": "The alert"
+        },
+        "texte": {
+          "fr": "Le résultat arrive sur mon téléphone, sans rien ouvrir.",
+          "en": "The result lands on my phone, without opening anything."
+        }
+      }
+    ],
+    "routinesTitre": {
+      "fr": "Ce que fait le dispositif",
+      "en": "What the setup does"
+    },
+    "routines": [
+      {
+        "logos": [
+          "Python",
+          "Gmail"
+        ],
+        "titre": {
+          "fr": "Tri des mails",
+          "en": "Email sorting"
+        },
+        "texte": {
+          "fr": "Les mails sont classés et des brouillons de réponse sont préparés.",
+          "en": "Emails are sorted and reply drafts are prepared."
+        }
+      },
+      {
+        "logos": [
+          "Python",
+          "Google Sheets"
+        ],
+        "titre": {
+          "fr": "Suivi chiffré",
+          "en": "Figures tracking"
+        },
+        "texte": {
+          "fr": "Chaque semaine, les chiffres clés sont relevés dans un tableau.",
+          "en": "Every week, the key figures are collected in a spreadsheet."
+        }
+      },
+      {
+        "logos": [
+          "Python",
+          "Telegram"
+        ],
+        "titre": {
+          "fr": "Veille du matin",
+          "en": "Morning watch"
+        },
+        "texte": {
+          "fr": "Les nouveautés du secteur arrivent résumées à 8 h.",
+          "en": "Sector news arrives summarised at 8 am."
+        }
+      }
+    ]
+  },
+  "outils": {
+    "titre": {
+      "fr": "Mes outils",
+      "en": "My tools"
+    },
+    "touches": [
+      {
+        "nom": "Claude Code",
+        "large": true,
+        "categorie": {
+          "fr": "IA",
+          "en": "AI"
+        },
+        "texte": {
+          "fr": "Tous les projets de ce site sont construits avec : agents, scripts, sites et tests.",
+          "en": "Every project on this site is built with it: agents, scripts, websites and tests."
+        }
+      },
+      {
+        "nom": "Python",
+        "categorie": {
+          "fr": "Code",
+          "en": "Code"
+        },
+        "texte": {
+          "fr": "Les scripts de mes automatisations et de Cartable.",
+          "en": "The scripts behind my automations and Cartable."
+        }
+      },
+      {
+        "nom": "Next.js",
+        "categorie": {
+          "fr": "Web",
+          "en": "Web"
+        },
+        "texte": {
+          "fr": "Le tableau de bord Orbite.",
+          "en": "The Orbite dashboard."
+        }
+      },
+      {
+        "nom": "TypeScript",
+        "categorie": {
+          "fr": "Code",
+          "en": "Code"
+        },
+        "texte": {
+          "fr": "Pour que le code d'Orbite reste fiable.",
+          "en": "To keep Orbite's code reliable."
+        }
+      },
+      {
+        "nom": "Vercel",
+        "categorie": {
+          "fr": "Hébergement",
+          "en": "Hosting"
+        },
+        "texte": {
+          "fr": "Mise en ligne d'Orbite, d'Atelier Lune et de ce portfolio.",
+          "en": "Deploying Orbite, Atelier Lune and this portfolio."
+        }
+      },
+      {
+        "nom": "Notion",
+        "categorie": {
+          "fr": "Documentation",
+          "en": "Documentation"
+        },
+        "texte": {
+          "fr": "Les notes et les comptes rendus de chaque projet.",
+          "en": "Notes and meeting minutes for every project."
+        }
+      },
+      {
+        "nom": "HTML",
+        "categorie": {
+          "fr": "Web",
+          "en": "Web"
+        },
+        "texte": {
+          "fr": "Le site d'Atelier Lune, écrit à la main.",
+          "en": "The Atelier Lune website, written by hand."
+        }
+      },
+      {
+        "nom": "Search Console",
+        "categorie": {
+          "fr": "SEO",
+          "en": "SEO"
+        },
+        "texte": {
+          "fr": "Suivi du référencement d'Atelier Lune.",
+          "en": "Tracking Atelier Lune's search ranking."
+        }
+      },
+      {
+        "nom": "GA4",
+        "categorie": {
+          "fr": "Mesure",
+          "en": "Analytics"
+        },
+        "texte": {
+          "fr": "Mesure des visites et des commandes du site.",
+          "en": "Measuring the site's visits and orders."
+        }
+      },
+      {
+        "nom": "Telegram",
+        "categorie": {
+          "fr": "Alertes",
+          "en": "Alerts"
+        },
+        "texte": {
+          "fr": "Mes scripts m'envoient leurs résultats ici.",
+          "en": "My scripts send me their results here."
+        }
+      },
+      {
+        "nom": "Google Sheets",
+        "categorie": {
+          "fr": "Suivi",
+          "en": "Tracking"
+        },
+        "texte": {
+          "fr": "Le suivi chiffré de mes automatisations.",
+          "en": "The figures tracker for my automations."
+        }
+      },
+      {
+        "nom": "Excel",
+        "large": true,
+        "categorie": {
+          "fr": "Finance",
+          "en": "Finance"
+        },
+        "texte": {
+          "fr": "Prévisions et reporting chez Nordwind Labs.",
+          "en": "Forecasts and reporting at Nordwind Labs."
+        }
+      },
+      {
+        "nom": "n8n",
+        "categorie": {
+          "fr": "Automatisation",
+          "en": "Automation"
+        },
+        "texte": {
+          "fr": "Les flux de la génération de devis.",
+          "en": "The quote generation workflows."
+        }
+      },
+      {
+        "nom": "Make",
+        "categorie": {
+          "fr": "Automatisation",
+          "en": "Automation"
+        },
+        "texte": {
+          "fr": "Des scénarios simples pour relier mes outils.",
+          "en": "Simple scenarios to connect my tools."
+        }
+      },
+      {
+        "nom": "Docker",
+        "categorie": {
+          "fr": "Installation",
+          "en": "Setup"
+        },
+        "texte": {
+          "fr": "Pour faire tourner mes outils partout de la même façon.",
+          "en": "To run my tools the same way everywhere."
+        }
+      },
+      {
+        "nom": "Gmail",
+        "categorie": {
+          "fr": "Messagerie",
+          "en": "Email"
+        },
+        "texte": {
+          "fr": "Tri automatique et brouillons de réponse.",
+          "en": "Automatic sorting and reply drafts."
+        }
+      }
+    ]
+  },
+  "autres": {
+    "titre": {
+      "fr": "Autres projets",
+      "en": "Other projects"
+    },
+    "intro": {
+      "fr": "Des outils plus petits, pour mes propres besoins.",
+      "en": "Smaller tools, built for my own needs."
+    },
+    "liste": [
+      {
+        "taille": "grand",
+        "titre": {
+          "fr": "Veille du matin",
+          "en": "Morning watch"
+        },
+        "texte": {
+          "fr": "Un script qui surveille mes sources chaque nuit, résume les nouveautés et me les envoie sur Telegram avant 8 h, avec un suivi dans Google Sheets.",
+          "en": "A script that watches my sources every night, summarises the news and sends it to me on Telegram before 8 am, with tracking in Google Sheets."
+        },
+        "miseEnPage": "cote",
+        "images": [
+          {
+            "src": "img/veille.jpg",
+            "alt": {
+              "fr": "Résumés de la veille envoyés chaque matin",
+              "en": "Daily watch summaries sent every morning"
+            }
+          }
+        ],
+        "outils": [
+          "Python",
+          "Telegram",
+          "Google Sheets"
+        ]
+      },
+      {
+        "taille": "petit",
+        "titre": {
+          "fr": "Mini boutique",
+          "en": "Mini shop"
+        },
+        "texte": {
+          "fr": "Une petite boutique pour vendre des carnets et des affiches, mise en ligne en un week-end.",
+          "en": "A small shop to sell notebooks and posters, put online in a weekend."
+        },
+        "miseEnPage": "une",
+        "images": [
+          {
+            "src": "img/boutique-accueil.jpg",
+            "alt": {
+              "fr": "Page d'accueil de la mini boutique",
+              "en": "Mini shop home page"
+            }
+          }
+        ],
+        "outils": [
+          "HTML",
+          "Vercel"
+        ]
+      },
+      {
+        "taille": "complet",
+        "titre": {
+          "fr": "Devis automatiques",
+          "en": "Automatic quotes"
+        },
+        "texte": {
+          "fr": "De la demande du client jusqu'au devis en PDF : calcul du prix, mise en page et envoi par mail. Seule la relance demande une validation humaine.",
+          "en": "From the customer's request to the PDF quote: price calculation, layout and email. Only the follow-up needs a human check."
+        },
+        "miseEnPage": "large",
+        "images": [
+          {
+            "src": "img/devis-flux.jpg",
+            "alt": {
+              "fr": "Le flux automatique de génération de devis",
+              "en": "The automatic quote generation workflow"
+            },
+            "largeur": 1510,
+            "hauteur": 650,
+            "ouvrable": false
+          }
+        ],
+        "outils": [
+          "Claude Code",
+          "n8n",
+          "Make",
+          "Docker"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "titre": {
+      "fr": "Disponible pour un stage de 6 mois à partir de mars 2027.",
+      "en": "Available for a 6-month internship from March 2027."
+    },
+    "mail": "prenom.nom@exemple.com",
+    "linkedin": "https://www.linkedin.com/in/votre-profil/",
+    "liens": [],
+    "pdf": null
+  }
+};
