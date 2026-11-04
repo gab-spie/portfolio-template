@@ -7,6 +7,10 @@ Il n'y a pas de mauvaise réponse. Une phrase maladroite vaut mieux que rien.
 Ne mets que des informations **vraies** : aucun chiffre inventé.
 
 > Avant de répondre, regarde à quoi ressemble le portfolio : ouvre `index.html` (double-clic), ou regarde les images du dossier `apercu/`.
+>
+> **Où mettre tes fichiers :** ta photo dans `img/` (par exemple `img/profil.jpg`), tes logos dans `img/logos/`, tes captures de projets dans `img/`. Donne des noms courts sans espaces et note-les dans les réponses.
+>
+> **Couleurs :** le fond de chaque projet doit être **sombre** (le texte est clair). Si tu n'as pas d'idée, écris « propose-moi » et l'IA te proposera 3 palettes.
 
 ## A. Toi
 
@@ -52,3 +56,9 @@ Nombre de projets à présenter (1 à 4 conseillés, davantage possible) :
 17. E-mail, LinkedIn, autres liens, période de disponibilité, PDF du portfolio :
 18. L'adresse du site, si tu la connais :
 19. Garder ou retirer la mention « Template par... » en bas de page :
+
+## F. Mise en ligne
+
+20. Veux-tu mettre le site en ligne (Vercel est gratuit et recommandé) ? As-tu un compte GitHub ? :
+21. Une adresse gratuite en `.vercel.app` ou un nom de domaine à toi (`prenom-nom.fr`, payant) ? :
+22. Veux-tu aussi un PDF du portfolio (français, anglais) à télécharger sur le site ? :

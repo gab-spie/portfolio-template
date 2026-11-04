@@ -45,9 +45,10 @@ La personne ne connaît pas le résultat. Avant toute question, **montre-lui le 
 ## Étape 1. L'entretien
 
 **Rythme, à respecter strictement :**
-- Ne montre **jamais** la liste complète des questions. Envoie uniquement la partie A (5 questions au plus), puis **attends les réponses**.
-- Ensuite, une partie par message : B, puis C, puis D, puis E.
-- Pour les projets (partie C), traite **un projet à la fois**, avec 3 questions par message : d'abord de quoi il s'agit et son rôle, puis le résultat et les points clés, puis les images et les couleurs.
+- **Au début de l'entretien, annonce le déroulé** en deux phrases : les parties à venir (A. toi, B. accueil, C. projets, D. phrase de synthèse, E. sections optionnelles, F. mise en ligne), le temps approximatif (20 à 30 minutes), et qu'à la fin le site sera prêt à être mis en ligne.
+- Ne montre **jamais** la liste complète des questions. Pose **3 questions au plus par message**, puis **attends les réponses** avant de continuer.
+- Avance partie par partie : A, B, C, D, E, F.
+- Pour les projets (partie C), traite **un projet à la fois** : d'abord de quoi il s'agit et son rôle, puis le résultat et les points clés, puis les images et les couleurs.
 - Reformule ce que tu as compris avant de passer à la suite.
 - Si la personne a rempli [QUESTIONNAIRE.md](QUESTIONNAIRE.md), lis-le d'abord. Ne repose pas ce qu'elle a déjà répondu : pose seulement les questions restantes, puis propose les phrases et les palettes de couleurs.
 Pose des questions ouvertes. Ne glisse pas de réponse dans la question (« tu as sûrement utilisé Python ? »). Ne pousse pas vers un secteur, un outil ou un style. Si une réponse est floue, demande un exemple concret.
@@ -61,8 +62,8 @@ Pose des questions ouvertes. Ne glisse pas de réponse dans la question (« tu a
 
 ### B. Page d'accueil
 6. La phrase d'accroche (`identite.accroche`, sous le nom). Demande d'abord à la personne d'écrire la sienne, même maladroite, puis aide-la à la resserrer. Si elle n'en a pas, propose 3 versions courtes fondées sur ses réponses, et laisse-la choisir ou corriger.
-7. Un court texte à côté de la photo (`identite.texte` : formation, poste actuel). Une photo : oui ou non ? (portrait 4:5 recommandé)
-8. Logos d'école ou d'entreprise à afficher (`identite.logos`) ? Ils doivent être fournis par la personne (SVG ou PNG transparent). Optionnel.
+7. Un court texte à côté de la photo (`identite.texte` : formation, poste actuel). Une photo : oui ou non ? (portrait 4:5 recommandé). **Dis tout de suite où la déposer** : dans le dossier `img/`, par exemple `img/profil.jpg` (elle remplace la photo d'exemple).
+8. Logos d'école ou d'entreprise à afficher (`identite.logos`) ? Ils doivent être fournis par la personne (SVG ou PNG transparent). Optionnel. **Dis où les déposer** : dans `img/logos/`, un fichier par logo.
 9. Faut-il afficher « mis à jour le... » ? Si oui, mets la date du jour dans `site.miseAJour` (`AAAA-MM-JJ`). Sinon, retire la clé.
 
 ### C. Les projets principaux
@@ -75,15 +76,15 @@ Pose des questions ouvertes. Ne glisse pas de réponse dans la question (« tu a
     - 2 à 5 points clés (`points` : ce qui a été fait, concrètement).
     - Ce qu'elle a appris (`appris`, une phrase, optionnel).
     - Outils ou méthodes utilisés (`outils`, optionnel).
-    - Captures ou visuels disponibles. Sont-ils confidentiels ? Faut-il flouter des noms, des prix, des visages, des données clients ?
+    - Captures ou visuels disponibles. **Dis où les déposer** : dans le dossier `img/`, avec un nom court sans espaces (`nom-du-projet-accueil.jpg`), et demande-lui de te donner les noms de fichiers. Sont-ils confidentiels ? Faut-il flouter des noms, des prix, des visages, des données clients ?
     - Une image doit-elle rester non ouvrable en grand ? (`"ouvrable": false`)
     - Un logo ou un nom de marque pour la carte (`marque`) ? Soit un logo fourni, soit un petit mot-symbole en texte, soit rien.
-12. **Les couleurs de chaque projet** (`couleurs`, à demander projet par projet) :
+12. **Les couleurs de chaque projet** (`couleurs`, à demander projet par projet). **Quand tu poses la question, rappelle toujours que le fond doit être sombre** (le texte est clair) et explique en une phrase à quoi servent les trois couleurs : le fond de la page quand on arrive sur ce projet, le texte, et l'accent (titres, puces, chiffres). Si la personne n'a aucune idée, ne lui laisse pas chercher : propose-lui tout de suite 3 palettes.
     - `fond` : couleur de fond. Elle doit être sombre : sur une carte, l'interface passe en mode sombre et les logos noirs s'inversent en blanc.
     - `texte` : couleur du texte, claire.
     - `accent` : couleur d'accent (résultat, mots en `<em>` du titre, chiffres, traits).
     - `fondSombre` (option) : un fond un peu différent pour le thème sombre.
-    Demande d'abord si la personne a des couleurs en tête (sa marque, celle du client, une couleur qu'elle aime). Si elle n'a pas d'avis, propose 3 palettes cohérentes avec l'univers du projet, chacune décrite en mots (« bleu nuit avec un accent vert ») et avec ses codes `#rrggbb`, et laisse-la choisir.
+    Demande d'abord si la personne a des couleurs en tête (sa marque, celle du client, une couleur qu'elle aime). Si elle n'a pas d'avis, propose 3 palettes cohérentes avec l'univers du projet, chacune décrite en mots (« bleu nuit avec un accent vert ») et avec ses trois codes `#rrggbb` (fond, texte, accent). Varie-les d'un projet à l'autre et n'en reprends pas les couleurs de l'exemple. Laisse-la choisir ou ajuster.
     Vérifie le contraste : au moins 4,5 pour 1 entre `texte` et `fond`, au moins 3 pour 1 entre `accent` et `fond` (et `fondSombre` s'il existe). Si une couleur demandée ne passe pas, dis-le et propose la teinte la plus proche qui passe. Deux projets voisins ne doivent pas avoir la même couleur de fond.
 
 ### D. La phrase qui s'allume au défilement
@@ -97,6 +98,11 @@ Pose des questions ouvertes. Ne glisse pas de réponse dans la question (« tu a
 17. **Contact** (`contact`) : e-mail, LinkedIn, autres liens. La phrase de disponibilité (« Disponible pour un stage à partir de... ») va dans `contact.titre`. Un PDF du portfolio ? (`contact.pdf`, voir le README pour l'exporter)
 18. Adresse finale du site si elle la connaît (`site.url`), pour les aperçus de partage.
 19. Mention « Template par... » en bas de page (`site.credit`) : la laisser, ou la retirer avec `"afficher": false`.
+
+### F. Mise en ligne et PDF
+20. Veux-tu mettre le site en ligne, avec une adresse que tu peux donner à des recruteurs ou des clients ? Explique en deux phrases ce qu'est Vercel (un hébergeur gratuit pour un portfolio, sans commande, qui met le site à jour à chaque modification) et recommande-le. Demande si elle a déjà un compte GitHub (gratuit, nécessaire pour Vercel). Précise que tu ne créeras aucun compte et ne publieras rien sans son accord.
+21. Veux-tu un nom de domaine à toi (`prenom-nom.fr`, payant) ou une adresse en `.vercel.app` (gratuite) ?
+22. Veux-tu aussi un PDF du portfolio, en français et en anglais, à proposer en téléchargement sur le site ? Si oui, renvoie vers « Exporter en PDF » dans le README.
 
 ## Étape 2. Remplir `contenu.json`
 
