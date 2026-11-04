@@ -2,6 +2,8 @@
 
 [English version below](#english)
 
+<p align="center"><a href="https://portfolio-template-orpin-kappa.vercel.app"><b>Voir la démo en ligne</b></a> · <a href="https://portfolio-template-orpin-kappa.vercel.app/?lang=en">Live demo (English)</a></p>
+
 <p align="center"><img src="apercu/accueil.jpg" alt="Page d'accueil du template : nom en grand, photo, logos et bouton vers les projets" width="100%"></p>
 
 <table>

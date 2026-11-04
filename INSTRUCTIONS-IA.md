@@ -96,7 +96,7 @@ Pose des questions ouvertes. Ne glisse pas de réponse dans la question (« tu a
 15. **Outils** (`outils`) : 6 à 20 outils, logiciels ou compétences réellement utilisés, avec pour chacun une catégorie courte (`categorie`) et une phrase sur l'usage (`texte`). Ce peut être des outils de design, de gestion, de recherche, de code... Pour afficher un logo, ajoute l'outil dans `catalogue` avec le chemin du logo. Quelques logos sont déjà dans `img/logos/`. Sans logo, le nom s'affiche seul. Sinon, supprime la clé `outils`.
 16. **Autres projets** (`autres`) : projets plus petits, avec ou sans image, avec `taille` et `miseEnPage` au choix (voir le README). Sinon, supprime la clé `autres`.
 17. **Contact** (`contact`) : e-mail, LinkedIn, autres liens. La phrase de disponibilité (« Disponible pour un stage à partir de... ») va dans `contact.titre`. Un PDF du portfolio ? (`contact.pdf`, voir le README pour l'exporter)
-18. Adresse finale du site si elle la connaît (`site.url`), pour les aperçus de partage.
+18. Adresse finale du site si elle la connaît (`site.url`), pour les aperçus de partage. Remplace dans tous les cas l'adresse de la démo du template (`portfolio-template-orpin-kappa.vercel.app`) : par la sienne, ou par une chaîne vide si elle ne la connaît pas encore.
 19. Mention « Template fait par... » en bas de page (`site.credit`) : la laisser, ou la retirer avec `"afficher": false`.
 
 ### F. Mise en ligne et PDF
@@ -135,7 +135,7 @@ Pose des questions ouvertes. Ne glisse pas de réponse dans la question (« tu a
 2. Lance un serveur local : `python3 -m http.server 8000`, puis ouvre `http://localhost:8000`.
 3. Si tu as un navigateur ou Playwright, prends des captures : ordinateur (1440 × 900), mobile (390 × 844), thème clair et sombre, `?lang=en`. Vérifie : aucune erreur dans la console, aucun débordement horizontal, aucune image cassée, pas de texte coupé. Sans navigateur, dis-le et demande à la personne de vérifier ces points.
 4. Fais défiler les cartes projets : la couleur de la page doit suivre chaque projet, et le texte doit rester lisible.
-5. Recherche dans le dossier tout reste du contenu d'exemple : `Verdier`, `Léa`, `Orbite`, `Atelier Lune`, `Cartable`, `Nordwind`, `Horizon`, `exemple.com`, `example.com`, `votre-profil`, `mon-portfolio`, `Chiffres d'exemple`. Il ne doit rien rester dans `contenu.json`, `contenu.js`, les balises de partage d'`index.html` ni `img/`.
+5. Recherche dans le dossier tout reste du contenu d'exemple : `Verdier`, `Léa`, `Orbite`, `Atelier Lune`, `Cartable`, `Nordwind`, `Horizon`, `exemple.com`, `example.com`, `votre-profil`, `orpin-kappa`, `Chiffres d'exemple`. Il ne doit rien rester dans `contenu.json`, `contenu.js`, les balises de partage d'`index.html` ni `img/`.
 6. Relis chaque chiffre avec la personne : il doit venir d'elle.
 7. Montre les captures à la personne et propose des ajustements.
 
