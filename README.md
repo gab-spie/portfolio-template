@@ -161,6 +161,16 @@ Un fonctionnement en étapes reliées par des flèches (une méthode, une chaîn
 ### `contact` (optionnel)
 `titre` (la grande phrase du bloc contact, selon ton objectif : un poste, des missions, une alternance, un simple « Écrivez-moi »), `mail`, `linkedin`, `liens` (liste de `{ "label", "url" }`) et `pdf` (`{ "fr": "portfolio-fr.pdf", "en": "portfolio-en.pdf", "label": { "fr": "...", "en": "..." } }`, ou `null`).
 
+## Technique
+
+- **Site statique** en **HTML, CSS et JavaScript sans framework** : pas de React, de Next.js, de Tailwind ni de npm, et **aucune étape de build**.
+- **`index.html`** contient tout le design, les animations et le code qui construit la page.
+- **`contenu.json`** contient tout le contenu. La page le lit au chargement (ou lit `contenu.js` quand on ouvre le fichier par double-clic).
+- **Python 3** (sans dépendance) pour `sync-contenu.py`, **Node et Playwright** seulement pour l'export PDF.
+- **Hébergement** : n'importe quel hébergeur de site statique. Sur Vercel, preset **Other**, sans commande de build.
+
+Ne demande pas à une IA de « refaire » ou de « convertir » le site : les animations seraient perdues. Elle ne doit modifier que `contenu.json` et `img/`.
+
 ## Contenu du dépôt
 
 | Fichier | Rôle |
@@ -245,6 +255,10 @@ A text is either a plain string (same in both languages) or `{ "fr": "...", "en"
 - **`contact`** (optional): `titre`, `mail`, `linkedin`, `liens` (`label`, `url`), `pdf` (`fr`, `en`, `label`, or `null`).
 
 All example content (Léa Verdier, Orbite, Atelier Lune, Cartable, Nordwind Labs, Institut Horizon) is fictional and the example images are generated. Tool logos belong to their owners.
+
+## Tech stack
+
+Static site in **plain HTML, CSS and JavaScript**, no framework (no React, Next.js, Tailwind or npm) and **no build step**. `index.html` holds the design, all animations and the code that builds the page from `contenu.json`. Python 3 (no dependency) for the sync, Node and Playwright only for the PDF export. Any static host works; on Vercel use the **Other** preset with no build command. Never ask an AI to rebuild or convert the site: the animations would be lost. It should only edit `contenu.json` and `img/`.
 
 ## License
 

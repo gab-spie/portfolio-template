@@ -4,6 +4,8 @@
 
 Choisis ton IA dans la liste, puis copie le message qui va avec. Chaque message est adapté à ce que l'outil sait faire.
 
+Le site est en **HTML, CSS et JavaScript, sans framework** (pas de React ni de Next.js) et sans étape de build. Ton contenu est dans `contenu.json`. Chaque message demande à l'IA de ne toucher qu'à ce fichier et aux images, pour garder toutes les animations.
+
 Avant tout : télécharge le template. Sur la page GitHub, bouton vert **Code**, puis **Download ZIP**.
 
 | Ton outil | Ce qu'il fait seul | Mise en ligne |
@@ -32,6 +34,8 @@ Voici le ZIP d'un modèle de portfolio. Je veux que tu l'adaptes à moi.
 4. Après chaque modification de contenu.json, lance python3 sync-contenu.py.
 5. À la fin, rends-moi le dossier complet en un seul ZIP, avec index.html à la racine, puis guide-moi pour la mise en ligne, une étape à la fois.
 
+Important : ne recrée pas le site et ne change pas sa technique (HTML, CSS et JavaScript, sans framework ni build). Modifie seulement contenu.json et le dossier img/, pour garder toutes les animations.
+
 Je ne suis pas développeur : explique-moi simplement chaque étape.
 ```
 
@@ -49,6 +53,8 @@ Voici le ZIP d'un modèle de portfolio. Je veux que tu l'adaptes à moi.
 3. Montre-moi à quoi ressemble le portfolio (images du dossier apercu/), puis pose-moi les questions par petites parties.
 4. Après chaque modification de contenu.json, lance python3 sync-contenu.py.
 5. À la fin, rends-moi le dossier complet en un seul ZIP téléchargeable, avec index.html à la racine, puis guide-moi pour la mise en ligne, une étape à la fois.
+
+Important : ne recrée pas le site et ne change pas sa technique (HTML, CSS et JavaScript, sans framework ni build). Modifie seulement contenu.json et le dossier img/, pour garder toutes les animations.
 
 Je ne suis pas développeur : explique-moi simplement chaque étape.
 ```
@@ -68,7 +74,7 @@ Adapte ce portfolio à moi.
 Décompresse le ZIP. Dans l'application ChatGPT pour ordinateur, choisis **Codex**, ouvre le dossier, puis écris :
 
 ```
-Lis AGENTS.md et INSTRUCTIONS-IA.md en entier, puis adapte ce portfolio à moi en suivant ces consignes à la lettre.
+Lis AGENTS.md et INSTRUCTIONS-IA.md en entier, puis adapte ce portfolio à moi en suivant ces consignes à la lettre. Ne recrée pas le site et ne change pas sa technique : modifie seulement contenu.json et img/.
 ```
 
 ## 5. Claude Cowork, Gemini, Cursor ou une autre IA qui ouvre un dossier
@@ -76,7 +82,9 @@ Lis AGENTS.md et INSTRUCTIONS-IA.md en entier, puis adapte ce portfolio à moi e
 Décompresse le ZIP, donne le dossier à l'IA, puis écris :
 
 ```
-Lis INSTRUCTIONS-IA.md en entier, puis adapte ce portfolio à moi en suivant ces consignes à la lettre. Je ne suis pas développeur : explique-moi simplement chaque étape.
+Lis INSTRUCTIONS-IA.md en entier, puis adapte ce portfolio à moi en suivant ces consignes à la lettre. Important : ne recrée pas le site et ne change pas sa technique (HTML, CSS et JavaScript, sans framework ni build). Modifie seulement contenu.json et le dossier img/, pour garder toutes les animations.
+
+Je ne suis pas développeur : explique-moi simplement chaque étape.
 ```
 
 ## 6. Si l'IA ne peut ouvrir aucun fichier
@@ -84,7 +92,9 @@ Lis INSTRUCTIONS-IA.md en entier, puis adapte ce portfolio à moi en suivant ces
 Envoie `INSTRUCTIONS-IA.md` et `contenu.json` (ou colle leur contenu), puis :
 
 ```
-Voici les consignes (INSTRUCTIONS-IA.md) et le fichier de contenu (contenu.json) d'un modèle de portfolio. Suis les consignes à la lettre, section « Mode conversation seule » : pose-moi les questions par petites parties, puis rends-moi le contenu.json complet et la liste des images à ajouter. Je ne suis pas développeur : explique-moi simplement chaque étape.
+Voici les consignes (INSTRUCTIONS-IA.md) et le fichier de contenu (contenu.json) d'un modèle de portfolio. Suis les consignes à la lettre, section « Mode conversation seule » : pose-moi les questions par petites parties, puis rends-moi le contenu.json complet et la liste des images à ajouter. Important : ne recrée pas le site et ne change pas sa technique (HTML, CSS et JavaScript, sans framework ni build). Modifie seulement contenu.json et le dossier img/, pour garder toutes les animations.
+
+Je ne suis pas développeur : explique-moi simplement chaque étape.
 ```
 
 Remplace ensuite `contenu.json` dans ton dossier par celui qu'elle te rend, ajoute tes images dans `img/`, et double-clique sur `synchroniser.bat` (Windows) ou `synchroniser.command` (Mac).
@@ -101,7 +111,7 @@ L'IA te guide. Deux chemins, détaillés dans [GUIDE.md](GUIDE.md#vercel) :
 
 Download the template first: green **Code** button, then **Download ZIP**.
 
-- **Claude.ai** (website or app): in **Settings**, **Capabilities**, turn on file creation (code execution). Attach the ZIP and write: *"Here is the ZIP of a portfolio template. Adapt it to me. Open the ZIP with your code tool, read INSTRUCTIONS-IA.md in full and follow it exactly. First tell me what you can do here and what I will need to publish. Show me the portfolio (images in apercu/), then ask me the questions in small groups. Run python3 sync-contenu.py after each change to contenu.json. At the end, give me the whole folder as one ZIP with index.html at the root, then guide me to publish it, one step at a time. I am not a developer: explain each step simply."*
+- **Claude.ai** (website or app): in **Settings**, **Capabilities**, turn on file creation (code execution). Attach the ZIP and write: *"Here is the ZIP of a portfolio template. Adapt it to me. Open the ZIP with your code tool, read INSTRUCTIONS-IA.md in full and follow it exactly. First tell me what you can do here and what I will need to publish. Show me the portfolio (images in apercu/), then ask me the questions in small groups. Run python3 sync-contenu.py after each change to contenu.json. At the end, give me the whole folder as one ZIP with index.html at the root, then guide me to publish it, one step at a time. Do not rebuild the site or change its technology (plain HTML, CSS and JavaScript, no framework, no build): only edit contenu.json and img/, so all animations stay. I am not a developer: explain each step simply."*
 - **ChatGPT** (website or app): send only the ZIP (the free plan allows few files per day) with the same message, replacing "your code tool" with "Python". Nothing to connect.
 - **Claude Code**: unzip, open the folder, write *"Adapt this portfolio to me."*
 - **ChatGPT desktop, Codex mode**: unzip, open the folder, write *"Read AGENTS.md and INSTRUCTIONS-IA.md in full, then adapt this portfolio to me following them exactly."*

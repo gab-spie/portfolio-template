@@ -12,6 +12,9 @@ Tu peux modifier : `contenu.json` et le dossier `img/` (dont `img/logos/`).
 Tu ne modifies **pas** `index.html` (design et animations), sauf si la personne le demande explicitement.
 Après chaque modification de `contenu.json`, lance `python3 sync-contenu.py`. Ce script régénère `contenu.js` et réécrit seul les balises de partage entre `<!-- meta:start -->` et `<!-- meta:end -->` dans `index.html`. C'est normal : ne fais pas ces changements à la main.
 
+**La technique, à ne pas changer.** C'est un site **statique** en **HTML, CSS et JavaScript « vanilla »** (sans framework) : un seul fichier `index.html` contient le design, toutes les animations (lettres du nom, flèche IA, bande d'images, phrase qui s'allume, cartes en couleur, clavier d'outils) et le code qui construit la page à partir de `contenu.json`. Il n'y a **ni React, ni Next.js, ni Vue, ni Tailwind, ni npm, ni étape de build**. `contenu.js` est une copie de `contenu.json` pour l'ouverture par double-clic. `sync-contenu.py` (Python 3, sans dépendance) vérifie le contenu. `exporter-pdf.js` (Node et Playwright) sert seulement à l'export PDF.
+**Ne recrée jamais le site**, ne le convertis pas vers un framework, ne réécris pas `index.html`, ne le simplifie pas et ne génère pas « un portfolio similaire » : les animations seraient perdues. Si tu ne peux pas modifier les fichiers, rends seulement un nouveau `contenu.json`. Sur Vercel : preset **Other**, aucune commande de build, aucun dossier de sortie.
+
 Le contenu d'exemple (Léa Verdier, Orbite, Atelier Lune, Cartable, Nordwind Labs, Institut Horizon) est **100 % fictif**.
 Il doit disparaître entièrement : textes, images, logos d'exemple, chiffres d'exemple. Il ne reste rien de lui à la fin.
 
@@ -202,5 +205,6 @@ Si tu ne peux pas lire ni écrire de fichiers :
 - Écrire à la place de la personne son accroche ou sa grande phrase sans lui avoir d'abord demandé la sienne.
 - Garder du contenu d'exemple (textes, images, logos, chiffres).
 - Modifier le design ou le code sans demande explicite.
+- Recréer le site, le convertir en React, Next.js ou autre, ou le remplacer par un portfolio « équivalent » : les animations seraient perdues.
 - Mettre en ligne des images confidentielles non floutées.
 - Publier, pousser ou envoyer quoi que ce soit sans l'accord de la personne.
