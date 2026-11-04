@@ -169,7 +169,7 @@ Un fonctionnement en étapes reliées par des flèches (une méthode, une chaîn
 - **Python 3** (sans dépendance) pour `sync-contenu.py`, **Node et Playwright** seulement pour l'export PDF.
 - **Hébergement** : n'importe quel hébergeur de site statique. Sur Vercel, preset **Other**, sans commande de build.
 
-Ne demande pas à une IA de « refaire » ou de « convertir » le site : les animations seraient perdues. Elle ne doit modifier que `contenu.json` et `img/`.
+Ne demande pas à une IA de « refaire » ou de « convertir » le site : les animations seraient perdues. Le rendu de la démo, et de tout portfolio fait avec ce template, vient d'`index.html`. Elle ne doit modifier que `contenu.json` et `img/`.
 
 ## Contenu du dépôt
 

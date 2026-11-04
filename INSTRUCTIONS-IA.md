@@ -14,6 +14,21 @@ Après chaque modification de `contenu.json`, lance `python3 sync-contenu.py`. C
 
 **La technique, à ne pas changer.** C'est un site **statique** en **HTML, CSS et JavaScript « vanilla »** (sans framework) : un seul fichier `index.html` contient le design, toutes les animations (lettres du nom, flèche IA, bande d'images, phrase qui s'allume, cartes en couleur, clavier d'outils) et le code qui construit la page à partir de `contenu.json`. Il n'y a **ni React, ni Next.js, ni Vue, ni Tailwind, ni npm, ni étape de build**. `contenu.js` est une copie de `contenu.json` pour l'ouverture par double-clic. `sync-contenu.py` (Python 3, sans dépendance) vérifie le contenu. `exporter-pdf.js` (Node et Playwright) sert seulement à l'export PDF.
 **Ne recrée jamais le site**, ne le convertis pas vers un framework, ne réécris pas `index.html`, ne le simplifie pas et ne génère pas « un portfolio similaire » : les animations seraient perdues. Si tu ne peux pas modifier les fichiers, rends seulement un nouveau `contenu.json`. Sur Vercel : preset **Other**, aucune commande de build, aucun dossier de sortie.
+Si la personne te montre un portfolio fait avec ce template (la démo, ou le site d'un ami) et dit « je veux le même rendu », c'est **déjà** ce template : remplis seulement `contenu.json`, ne recrée rien, et ne reprends pas le contenu de ce site. N'écris jamais `index.html` en entier (`cat >`, nouveau fichier, « version simplifiée »). Avant de rendre un ZIP, vérifie que `index.html` contient toujours `ticker-track` et `data-words` : sinon tu l'as cassé, reprends celui du template.
+
+## Demandes fréquentes que le template n'a pas
+
+Dis-le **avant** d'agir, puis propose l'équivalent :
+- **Une section « Expériences »** : une carte `projets` par expérience (titre, résultat, points, couleurs), ou `autres` pour les plus petites.
+- **« À propos »** : `identite.texte` (court) et la `phrase` qui s'allume.
+- **« Engagements », « Formation », associations** : `autres`, et `identite.logos`.
+- **Un bouton « En savoir plus »** : il n'existe pas. Garde des `points` courts et `appris`.
+- **Des couleurs pastel** : en `texte` ou en `accent`, sur un fond de projet sombre.
+- **La couleur de l'accueil ou des lettres du nom** : ne se règle pas dans `contenu.json`.
+- **Les lettres A et I du nom qui forment « AI »** : déjà prévu, avec `[[IA]]` ou `[[AI]]` dans l'accroche.
+- **Un site visible par elle seule** : pas de mot de passe dans le template. Une adresse `.vercel.app` qu'on ne partage pas reste introuvable. Une vraie protection se règle dans Vercel, hors template.
+
+Ne modifie `index.html` que si la personne l'accepte, après lui avoir dit qu'elle risque de perdre des animations et les mises à jour du template.
 
 Le contenu d'exemple (Léa Verdier, Orbite, Atelier Lune, Cartable, Nordwind Labs, Institut Horizon) est **100 % fictif**.
 Il doit disparaître entièrement : textes, images, logos d'exemple, chiffres d'exemple. Il ne reste rien de lui à la fin.
@@ -45,7 +60,7 @@ La personne n'est peut-être pas à l'aise avec l'informatique. Elle ne sait pas
    - **Claude Code** (terminal, application Claude onglet Code, extensions d'éditeur) : tu travailles dans le dossier, tu lances Python et le serveur local. Mise en ligne : chemin A avec `git` et `gh` (la personne se connecte elle-même avec `gh auth login`), puis import sur Vercel.
    - **ChatGPT pour ordinateur en mode Codex**, ou Codex en terminal : comme Claude Code. Le plugin Vercel officiel (Paramètres, puis **Plugins**) permet de déployer : une preview d'abord, la production seulement après accord.
    - **Claude.ai** (site ou application) : active ou fais activer la création de fichiers (Paramètres, puis **Capacités**). L'intégration GitHub de Claude.ai ne fait que lire. Ouvre le ZIP avec ton outil de code, rends un ZIP final (30 Mo maximum, `index.html` à la racine), puis chemin B.
-   - **ChatGPT** (site ou application) : ouvre le ZIP avec Python. L'application GitHub de ChatGPT ne fait que lire : ne demande rien à connecter, prends le chemin B, et rends à la fin le dossier complet en un seul ZIP. En gratuit, la personne n'a droit qu'à quelques fichiers par jour : demande-lui un seul envoi (le ZIP), pas les fichiers un par un.
+   - **ChatGPT** (site ou application) : travaille avec Python dans la conversation. **Ne lance jamais de tâche Codex** : elle consomme le quota de la personne. L'application GitHub de ChatGPT peut parfois écrire un fichier texte, jamais une image : n'en dépends pas. Ne dis « c'est connecté » qu'après avoir lu et écrit un fichier de test. Prends le chemin B et rends à la fin le dossier complet en un seul ZIP. En gratuit, la personne n'a droit qu'à quelques fichiers par jour : demande-lui un seul envoi (le ZIP), pas les fichiers un par un.
    - **Claude Cowork** : tu modifies le dossier connecté ; mise en ligne par le chemin B, la personne se connecte elle-même aux sites.
    - **Si tu ne peux pas ouvrir le ZIP** : demande-lui de le décompresser et de t'envoyer seulement `INSTRUCTIONS-IA.md` et `contenu.json`, puis passe au « Mode conversation seule ».
 
@@ -75,6 +90,9 @@ La personne ne connaît pas le résultat. Avant toute question, **montre-lui le 
 - Avance partie par partie : A, B, C, D, E, F.
 - Pour les projets (partie C), traite **un projet à la fois** : d'abord de quoi il s'agit et son rôle, puis le résultat et les points clés, puis les images et les couleurs.
 - Reformule ce que tu as compris avant de passer à la suite.
+- Si la personne dicte à la voix, fais-lui épeler une fois chaque nom propre (école, entreprise, association), puis garde cette orthographe partout.
+- N'ajoute aucun chiffre trouvé ailleurs (web, études) : seulement les siens. Ne te sers pas de ce que tu sais déjà d'elle (mémoire, anciennes conversations) sans le lui faire confirmer.
+- Garde des messages courts : pas de longs tableaux ni de textes entiers déjà rédigés tant qu'elle n'a pas répondu.
 - Si la personne a rempli [QUESTIONNAIRE.md](QUESTIONNAIRE.md), lis-le d'abord. Ne repose pas ce qu'elle a déjà répondu : pose seulement les questions restantes, puis propose les phrases et les palettes de couleurs.
 Pose des questions ouvertes. Ne glisse pas de réponse dans la question (« tu as sûrement utilisé Python ? »). Ne pousse pas vers un secteur, un outil ou un style. Si une réponse est floue, demande un exemple concret.
 
@@ -86,7 +104,7 @@ Pose des questions ouvertes. Ne glisse pas de réponse dans la question (« tu a
 5. Un ton souhaité : sobre, chaleureux, direct, créatif ?
 
 ### B. Page d'accueil
-6. La phrase d'accroche (`identite.accroche`, sous le nom). Demande d'abord à la personne d'écrire la sienne, même maladroite, puis aide-la à la resserrer. Si elle n'en a pas, propose 3 versions courtes fondées sur ses réponses, et laisse-la choisir ou corriger. Si la phrase parle d'IA, entoure le mot de doubles crochets : `[[IA]]` en français, `[[AI]]` en anglais (un seul par langue). Au survol des lettres i et a du nom, une flèche rouge relie ces lettres au mot. Sans marqueur, la flèche écrit « IA » à la main près du nom. Explique-le à la personne en une phrase, et dis-lui quelles lettres de son nom s'allumeront : un i suivi plus loin d'un a (IA, en français), un a suivi plus loin d'un i (AI, en anglais), la paire la plus serrée, en lisant prénom puis nom. Une seule paire trouvée : elle sert dans les deux langues. Aucune (ni i suivi d'un a, ni a suivi d'un i) : pas d'effet, et le marqueur ne sert à rien.
+6. La phrase d'accroche (`identite.accroche`, sous le nom). Demande d'abord à la personne d'écrire la sienne, même maladroite, puis aide-la à la resserrer. Dans le message où tu la lui demandes, ne propose aucune version : attends sa réponse. Si elle n'en a pas, propose 3 versions courtes fondées sur ses réponses, et laisse-la choisir ou corriger. Si la phrase parle d'IA, entoure le mot de doubles crochets : `[[IA]]` en français, `[[AI]]` en anglais (un seul par langue). Au survol des lettres i et a du nom, une flèche rouge relie ces lettres au mot. Sans marqueur, la flèche écrit « IA » à la main près du nom. Explique-le à la personne en une phrase, et dis-lui quelles lettres de son nom s'allumeront : un i suivi plus loin d'un a (IA, en français), un a suivi plus loin d'un i (AI, en anglais), la paire la plus serrée, en lisant prénom puis nom. Une seule paire trouvée : elle sert dans les deux langues. Aucune (ni i suivi d'un a, ni a suivi d'un i) : pas d'effet, et le marqueur ne sert à rien.
 7. Un court texte à côté de la photo (`identite.texte` : formation, poste actuel). Une photo : oui ou non ? (portrait 4:5 recommandé). **Dis tout de suite où la déposer** : dans le dossier `img/`, par exemple `img/profil.jpg` (elle remplace la photo d'exemple).
 8. Logos d'école ou d'entreprise à afficher (`identite.logos`) ? Ils doivent être fournis par la personne (SVG ou PNG transparent). Optionnel. **Dis où les déposer** : dans `img/logos/`, un fichier par logo.
 9. Faut-il afficher « mis à jour le... » ? Si oui, mets la date du jour dans `site.miseAJour` (`AAAA-MM-JJ`). Sinon, retire la clé.
@@ -109,12 +127,13 @@ Pose des questions ouvertes. Ne glisse pas de réponse dans la question (« tu a
     - `texte` : couleur du texte, claire.
     - `accent` : couleur d'accent (résultat, mots en `<em>` du titre, chiffres, traits).
     - `fondSombre` (option) : un fond un peu différent pour le thème sombre.
+    Ne propose jamais de palette à fond clair. Si la personne veut du pastel, mets-le en `texte` ou en `accent`.
     Demande d'abord si la personne a des couleurs en tête (sa marque, celle du client, une couleur qu'elle aime). Si elle n'a pas d'avis, propose 3 palettes cohérentes avec l'univers du projet, chacune décrite en mots (« bleu nuit avec un accent vert ») et avec ses trois codes `#rrggbb` (fond, texte, accent). Varie-les d'un projet à l'autre et n'en reprends pas les couleurs de l'exemple. Laisse-la choisir ou ajuster.
     Vérifie le contraste : au moins 4,5 pour 1 entre `texte` et `fond`, au moins 3 pour 1 entre `accent` et `fond` (et `fondSombre` s'il existe). Si une couleur demandée ne passe pas, dis-le et propose la teinte la plus proche qui passe. Deux projets voisins ne doivent pas avoir la même couleur de fond.
 
 ### D. La phrase qui s'allume au défilement
 13. Cette grande phrase (`phrase`) résume en une ligne le fil rouge des projets, par exemple « un problème, une solution » ou « trois situations, trois outils ». Elle doit venir du parcours **réel** de la personne. C'est du texte brut : pas de balises.
-    Demande d'abord à la personne de proposer sa propre phrase, même maladroite. Si elle n'en a pas, propose 3 versions à partir de ses projets, laisse-la choisir ou corriger. N'en garde pas une générique.
+    Demande d'abord à la personne de proposer sa propre phrase, même maladroite, sans proposer de version dans le même message. Si elle n'en a pas, propose 3 versions à partir de ses projets, laisse-la choisir ou corriger. N'en garde pas une générique.
 
 ### E. Sections optionnelles (une section sans contenu disparaît)
 14. **Schéma en étapes** (`schema`) : un fonctionnement en 2 à 4 étapes (une méthode, une chaîne d'outils, un processus de travail). Utile si la personne a un dispositif à expliquer. Sinon, supprime la clé `schema`.
@@ -151,6 +170,8 @@ Pose des questions ouvertes. Ne glisse pas de réponse dans la question (« tu a
 - La première capture d'un projet est la grande : ne la mets pas en `"type": "mobile"`. Une capture mobile suivante s'indique avec `"type": "mobile"` (cadre vertical).
 - Floute ce qui est confidentiel (noms de clients, mails, prix, données personnelles, visages) **avant** de mettre l'image dans `img/`. Montre le résultat à la personne. Si tu ne peux pas modifier d'images, dis-lui précisément quoi flouter.
 - Mets `"ouvrable": false` sur les images qui ne doivent pas être agrandies ou téléchargées facilement.
+- Prévois **au moins 3 captures au total, sur 2 projets ou plus** : avec une seule, la bande d'images répète la même image partout. Dis-le à la personne dès la partie C.
+- Ne montre jamais une image trouvée sur le web comme si elle représentait un projet de la personne.
 - Si la personne n'a pas encore d'images : utilise un visuel neutre qu'elle remplacera, et dis-le-lui clairement. Ne garde jamais les captures d'exemple.
 - À la fin, supprime de `img/` toutes les images d'exemple qui ne sont plus utilisées (y compris `og.jpg` et `profil.jpg` s'ils n'ont pas été remplacés), et de `img/logos/` les logos inutiles (dont `ecole-exemple.svg` et `entreprise-exemple.svg`).
 
@@ -163,6 +184,7 @@ Pose des questions ouvertes. Ne glisse pas de réponse dans la question (« tu a
 5. Recherche dans le dossier tout reste du contenu d'exemple : `Verdier`, `Léa`, `Orbite`, `Atelier Lune`, `Cartable`, `Nordwind`, `Horizon`, `exemple.com`, `example.com`, `votre-profil`, `portfolio-spie`, `Chiffres d'exemple`, `mars 2027`. Il ne doit rien rester dans `contenu.json`, `contenu.js`, les balises de partage d'`index.html` ni `img/`.
 6. Relis chaque chiffre avec la personne : il doit venir d'elle.
 7. Montre les captures à la personne et propose des ajustements.
+8. Ne fais jamais mettre en ligne une version dont tu n'as pas vu le rendu. Sans navigateur, dis-le, et fais-la d'abord vérifier par la personne (double-clic sur `index.html`, ou un Vercel Drop de test).
 
 ## Étape 5. Mise en ligne
 
@@ -181,6 +203,10 @@ Il y a deux chemins. Choisis selon tes outils (voir « Avant tout »), et dis à
 7. **Déployer** : ne change aucun réglage (pas de commande de build, preset **Other**). Clique sur **Deploy**. Environ une minute après, Vercel affiche l'adresse du site.
 8. **Finaliser** : mets cette adresse dans `site.url`, relance `python3 sync-contenu.py` si tu peux (sinon, dis-le), puis demande-lui de renvoyer `contenu.json`, `contenu.js` et `index.html` sur GitHub (**Add file**, puis **Upload files**, mêmes noms : ils remplacent les anciens). Vercel met le site à jour tout seul.
 9. **Pour la suite**, explique : à chaque modification, elle renvoie les fichiers changés sur GitHub de la même façon, et le site se met à jour en une minute.
+
+**Mettre à jour un dépôt qui existe déjà** : **Add file**, puis **Upload files**, et glisser tout le contenu du dossier. Les fichiers de même nom sont remplacés : ne fais **rien supprimer**, ni fichier par fichier, ni dossier. Sur chaque capture qu'elle t'envoie, vérifie le nom du dépôt en haut à gauche. Ne fais pas importer un dépôt vide dans Vercel : les fichiers d'abord.
+
+**Voir le rendu en ligne avant la fin** : si elle veut voir son site en ligne pendant l'entretien, propose un Vercel Drop avec le ZIP du moment (une minute), et garde GitHub pour la version finale.
 
 **Plus rapide, si GitHub la bloque : Vercel Drop.** Sur [vercel.com/drop](https://vercel.com/drop), elle glisse le dossier décompressé (celui qui contient `index.html` à la racine) ou le ZIP final, se connecte à Vercel (gratuit), donne le nom `prenom-nom-portfolio`, puis **Deploy**. Le site est en ligne en une minute, sans GitHub. Limite : chaque dépôt crée un nouveau projet. Pour mettre à jour le site plus tard, il faut supprimer l'ancien projet dans Vercel (le projet, **Settings**, tout en bas **Delete Project**), puis refaire un Drop avec le même nom, ou passer au chemin GitHub. Dis-le-lui avant qu'elle choisisse.
 Nom de l'adresse : recommande `prenom-nom-portfolio` (minuscules, sans accents ni espaces, mots séparés par des tirets). L'adresse vient de ce nom : le plus simple est de nommer ainsi le dépôt GitHub (par exemple lors de **Use this template**) ou le projet Vercel à l'import. Si l'adresse est déjà prise, Vercel ajoute des lettres au hasard : on peut alors ajouter une adresse libre dans le projet Vercel, **Settings**, puis **Domains** (par exemple `prenom-nom-portfolio.vercel.app` ou une variante). Puis mettre cette adresse dans `site.url` et synchroniser.

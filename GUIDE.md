@@ -181,6 +181,9 @@ Quel que soit l'hébergeur : pas de commande de build, et lance `python3 sync-co
 | Message « Erreur dans contenu.json » | JSON invalide (virgule finale, guillemet manquant). Lance `python3 sync-contenu.py` : il indique la ligne. |
 | Message « contenu.json introuvable » | Le fichier n'est pas à côté de `index.html`, ou la page est ouverte directement sans `contenu.js` : lance `python3 sync-contenu.py`. |
 | Image cassée | Mauvais chemin dans `src`. Le script le signale. |
+| Plus aucune animation | `index.html` a été remplacé, souvent par une IA. Reprends celui du template et garde ton `contenu.json`. |
+| La bande montre la même image partout | Il n'y a qu'une capture : ajoutes-en d'autres, sur plusieurs projets. |
+| Remplacer les fichiers sur GitHub | **Add file**, puis **Upload files**, glisse tout : les fichiers de même nom sont remplacés, rien à supprimer. |
 | Aperçu de partage faux | Tu n'as pas relancé `sync-contenu.py`, ou `site.url` est vide. |
 | Contenu pas à jour en ouvrant le fichier directement | `contenu.js` est périmé : relance `sync-contenu.py`. |
 | Texte d'exemple qui reste | Cherche `Verdier`, `Orbite`, `Atelier Lune`, `Cartable`, `Nordwind`, `Horizon`, `mars 2027`, `exemple.com`, `example.com`, `votre-profil`, `portfolio-spie` dans le dossier. |
@@ -295,6 +298,9 @@ Open the site and print to PDF (enable background graphics). Or run `npm i playw
 - **"Erreur dans contenu.json" message**: invalid JSON (trailing comma, missing quote). Run `python3 sync-contenu.py`: it tells you the line.
 - **"contenu.json introuvable" message**: the file is not next to `index.html`, or the page is opened directly without `contenu.js`. Run `python3 sync-contenu.py`.
 - **Broken image**: wrong path in `src`. The script flags it.
+- **No animation at all**: `index.html` was replaced, often by an AI. Take the template's one back and keep your `contenu.json`.
+- **The image strip repeats the same picture**: there is only one screenshot. Add more, across several projects.
+- **Replacing files on GitHub**: **Add file**, **Upload files**, drag everything: files with the same name are replaced, nothing to delete.
 - **Wrong share preview**: you did not run `sync-contenu.py`, or `site.url` is empty.
 - **Direct file opening shows old content**: `contenu.js` is stale. Run the sync.
 - **Example text left**: search the folder for `Verdier`, `Orbite`, `Atelier Lune`, `Cartable`, `Nordwind`, `Horizon`, `mars 2027`, `exemple.com`, `example.com`, `votre-profil`, `portfolio-spie`.
