@@ -3,6 +3,7 @@
 Quand l'utilisateur dit « adapte ce portfolio à moi » (ou équivalent), suis **à la lettre** le fichier [INSTRUCTIONS-IA.md](INSTRUCTIONS-IA.md). Lis-le en entier d'abord.
 
 Résumé :
+- **Dès le premier message**, dis ce que tu peux faire ici (fichiers, commandes, connecteurs GitHub et Vercel) et ce qu'il faudra pour la mise en ligne (comptes GitHub et Vercel gratuits). Section « Avant tout » de `INSTRUCTIONS-IA.md`.
 - **Avant toute question, montre le portfolio à la personne** (étape 0 de `INSTRUCTIONS-IA.md` : lance le site ou montre les images de `apercu/`), car elle ne sait pas à quoi il ressemble.
 - Pose les questions par parties, jamais toute la liste d'un coup.
 - Commence par un entretien ouvert et sans a priori : contexte, objectif, public, puis projets, **couleurs de chaque projet** (avec contraste vérifié), phrase d'accroche et phrase qui s'allume proposées d'abord par l'utilisateur, sections optionnelles. Tu ne connais pas cette personne : ne suppose rien, et ne prends pas l'exemple comme modèle.
@@ -11,4 +12,4 @@ Résumé :
 - Efface tout le contenu d'exemple (Léa Verdier, Orbite, Atelier Lune, Cartable, Nordwind Labs, Institut Horizon), y compris les images et logos d'exemple.
 - Après chaque changement : `python3 sync-contenu.py`.
 - Vérifie le rendu sur ordinateur et mobile, en clair et en sombre, en FR et en EN, puis montre des captures.
-- Recommande Vercel pour la mise en ligne. Ne pousse et ne publie rien sans accord.
+- Recommande Vercel pour la mise en ligne. Sans connecteur, guide la personne clic par clic, une étape par message (étape 5, chemin B). Ne pousse et ne publie rien sans accord.

@@ -4,7 +4,15 @@
 
 Ce guide explique tout, pas à pas : récupérer le template, le remplir, le tester, le mettre en ligne avec Vercel et l'exporter en PDF.
 
-## 1. Le principe
+## 0. Avant de commencer : ce qu'il te faut
+
+- **Une IA** : Claude, ChatGPT, Gemini ou une autre. Si elle peut lire des fichiers (tu lui envoies le ZIP), c'est plus simple.
+- **Pour la mise en ligne**, deux comptes gratuits. Tu peux les créer maintenant, pendant l'entretien ou à la fin :
+  - **GitHub** (github.com) : l'endroit où les fichiers de ton site sont rangés ;
+  - **Vercel** (vercel.com) : le service qui met ton site sur Internet. Tu t'y inscris avec **Continue with GitHub**, sans nouveau mot de passe.
+- **Les connecteurs : facultatifs.** Certaines applications d'IA (par exemple Claude) peuvent se connecter à ton GitHub et à ton Vercel. L'IA peut alors mettre le site en ligne elle-même, avec ton accord. Tu les actives dans les paramètres de l'application, rubrique des connecteurs, puis **GitHub** et **Vercel**. **Sans connecteur, tout marche aussi** : l'IA te guide clic par clic (section 8).
+- **Python** : seulement pour la synchronisation (section 4). Si ton IA peut lancer des commandes, elle s'en occupe.
+
 
 Ce portfolio est un dossier de fichiers. **Tout ton contenu est dans un seul fichier : `contenu.json`**. Tes images sont dans `img/`. Tu ne touches jamais au code : le design, les animations, le thème clair/sombre et le FR/EN sont déjà prêts.
 
@@ -118,12 +126,19 @@ Ouvre `http://localhost:8000`. Teste aussi `?lang=en`, le thème clair/sombre (b
 
 ### Comment faire
 
-1. Mets ton dossier dans ton dépôt GitHub (`git push`, GitHub Desktop, ou **Add file**, puis **Upload files** sur la page du dépôt).
-2. Va sur [vercel.com](https://vercel.com) et connecte-toi avec ton compte GitHub.
-3. Clique sur **Add New**, puis **Project**, et choisis **ton** dépôt.
-4. Laisse tous les réglages par défaut (pas de commande de build, pas de dossier de sortie) et clique sur **Deploy**.
-5. Après environ une minute, Vercel te donne l'adresse de ton site.
-6. Mets cette adresse dans `site.url` de `contenu.json`, lance `python3 sync-contenu.py`, puis renvoie les fichiers sur GitHub. Les aperçus de partage seront alors corrects.
+Sans connaître Git, en 10 minutes environ :
+
+1. **Crée un compte GitHub** sur [github.com](https://github.com) (**Sign up**), si tu n'en as pas.
+2. **Crée un dépôt** : bouton **+** en haut à droite, puis **New repository**. Nom : `prenom-nom-portfolio`. Coche **Public**, puis **Create repository**.
+3. **Envoie tes fichiers** : sur la page du dépôt vide, clique sur **uploading an existing file**. Ouvre ton dossier, sélectionne **tout son contenu** (fichiers et dossiers `img`, `fonts`, `apercu`), pas le dossier lui-même, et fais-le glisser dans la page. Attends la fin du chargement, puis **Commit changes**. `index.html` doit apparaître directement dans la liste, pas dans un sous-dossier.
+4. **Crée ton compte Vercel** sur [vercel.com](https://vercel.com) : **Sign Up**, offre gratuite **Hobby**, puis **Continue with GitHub**.
+5. **Importe le dépôt** : **Add New**, puis **Project**, puis **Import** à côté de `prenom-nom-portfolio`. S'il n'apparaît pas, clique sur le lien qui règle l'accès de Vercel à GitHub et autorise ce dépôt.
+6. **Déploie** : ne change aucun réglage (pas de commande de build) et clique sur **Deploy**. Environ une minute après, Vercel te donne l'adresse de ton site.
+7. **Finalise** : mets cette adresse dans `site.url` de `contenu.json`, synchronise (section 4), puis renvoie `contenu.json`, `contenu.js` et `index.html` sur GitHub (**Add file**, puis **Upload files** : ils remplacent les anciens). Les aperçus de partage seront alors corrects.
+
+**Pour modifier ton site ensuite** : change tes fichiers, synchronise, renvoie-les sur GitHub de la même façon. Vercel met le site à jour tout seul en une minute.
+
+Si tu connais Git : `git push` ou GitHub Desktop remplacent les étapes 2 et 3.
 
 **Le nom de l'adresse.** Nom conseillé : `prenom-nom-portfolio`, pour obtenir `prenom-nom-portfolio.vercel.app`. Écris-le en minuscules, sans accents ni espaces, mots séparés par des tirets (par exemple `lea-verdier-portfolio`). L'adresse vient de ce nom : le plus simple est de le donner à ton dépôt GitHub (par exemple lors de **Use this template**) ou au projet Vercel à l'import (étape 3). Si l'adresse est déjà prise, Vercel ajoute des lettres au hasard : ajoute alors une adresse libre dans le projet Vercel, **Settings**, puis **Domains** (par exemple `prenom-nom-portfolio.vercel.app` ou une variante). Mets ensuite cette adresse dans `site.url` et synchronise (étape 6).
 
@@ -165,7 +180,13 @@ Quel que soit l'hébergeur : pas de commande de build, et lance `python3 sync-co
 
 # Complete guide (English)
 
-## 1. How it works
+## 0. Before you start: what you need
+
+- **An AI assistant**: Claude, ChatGPT, Gemini or another. It is easier if it can read files (send it the ZIP).
+- **To publish**, two free accounts, which you can create now, during the interview or at the end: **GitHub** (github.com), where your site's files are stored, and **Vercel** (vercel.com), which puts the site online. Sign up to Vercel with **Continue with GitHub**.
+- **Connectors are optional.** Some AI apps (Claude, for example) can connect to your GitHub and Vercel, and then publish the site for you, with your approval. Turn them on in the app settings, connectors section. **Without connectors everything still works**: the AI guides you click by click (section 7).
+- **Python**: only for the sync (section 4). If your AI can run commands, it handles it.
+
 
 The portfolio is a folder of files. **All your content lives in one file: `contenu.json`**. Your images live in `img/`. You never touch the code: design, animations, light/dark theme and FR/EN are ready.
 
@@ -227,13 +248,16 @@ Why we recommend it:
 - **A preview for every change**, before it goes live.
 - **Custom domain** supported.
 
-How to:
-1. Put your folder in your GitHub repository (`git push`, GitHub Desktop, or **Add file**, then **Upload files**).
-2. Go to [vercel.com](https://vercel.com) and sign in with GitHub.
-3. **Add New**, then **Project**, and pick **your** repository.
-4. Keep all default settings (no build command, no output folder) and click **Deploy**.
-5. About a minute later, Vercel gives you your address.
-6. Put it in `site.url` in `contenu.json`, run `python3 sync-contenu.py`, and push again so share previews are correct.
+How to, without Git (about 10 minutes):
+1. **Create a GitHub account** at [github.com](https://github.com) (**Sign up**) if you have none.
+2. **Create a repository**: **+** at the top right, **New repository**, name `firstname-lastname-portfolio`, **Public**, **Create repository**.
+3. **Upload your files**: on the empty repository page, click **uploading an existing file**, select **everything inside** your folder (files and the `img`, `fonts`, `apercu` folders), not the folder itself, drag it into the page, wait, then **Commit changes**. `index.html` must appear directly in the list.
+4. **Create your Vercel account** at [vercel.com](https://vercel.com): **Sign Up**, free **Hobby** plan, **Continue with GitHub**.
+5. **Import**: **Add New**, **Project**, **Import** next to your repository. If it is missing, use the link that adjusts Vercel's access to GitHub and allow this repository.
+6. **Deploy**: change nothing (no build command), click **Deploy**. About a minute later you get your address.
+7. **Finish**: put the address in `site.url`, sync (section 4), and upload `contenu.json`, `contenu.js` and `index.html` again (**Add file**, **Upload files**: they replace the old ones).
+
+To update the site later: edit, sync, upload the changed files the same way. Vercel updates the site in about a minute. If you know Git, `git push` or GitHub Desktop replace steps 2 and 3.
 
 **The address name.** Suggested name: `firstname-lastname-portfolio`, to get `firstname-lastname-portfolio.vercel.app`. Write it in lowercase, without accents or spaces, words separated by hyphens (for example `lea-verdier-portfolio`). The address comes from this name: the simplest is to give it to your GitHub repository (for example with **Use this template**) or to the Vercel project when importing (step 3). If the address is already taken, Vercel adds random letters: then add a free address in the Vercel project, **Settings**, then **Domains** (for example `firstname-lastname-portfolio.vercel.app` or a variant). Then put this address in `site.url` and sync (step 6).
 

@@ -24,6 +24,21 @@ Un « projet » peut être un site, une étude, un mémoire, une campagne, un é
 **Commence par montrer l'aperçu (étape 0), puis pose des questions.** Ne remplis rien avant d'avoir compris le contexte.
 N'invente jamais un chiffre, un nom, un résultat, un diplôme ou un client. Si la personne n'a pas de chiffre, n'en mets pas.
 
+## Avant tout : vérifie tes outils et explique ce qu'il faudra
+
+La personne n'est peut-être pas à l'aise avec l'informatique. Elle ne sait pas ce que tu peux faire, ni ce qu'il faudra pour mettre le site en ligne. Dis-le-lui **dès le premier message**, en 4 ou 5 lignes simples, avant l'étape 0.
+
+1. **Regarde ce que tu peux faire** dans cette conversation :
+   - lire et modifier les fichiers du dossier (ou du ZIP) ;
+   - lancer des commandes (Python, un serveur local, des captures) ;
+   - utiliser des connecteurs GitHub et Vercel (outils qui te laissent créer un dépôt ou mettre un site en ligne au nom de la personne).
+2. **Dis-lui en une phrase comment ça va se passer**. Par exemple : « Je peux modifier les fichiers et te rendre un ZIP prêt, mais je n'ai pas accès à GitHub ni à Vercel : la mise en ligne, tu la feras en suivant mes étapes, clic par clic. »
+3. **Liste ce qu'il lui faudra pour la mise en ligne**, pour qu'elle ne bloque pas à la fin :
+   - un compte **GitHub** (gratuit, github.com) : c'est là que les fichiers du site sont rangés ;
+   - un compte **Vercel** (gratuit, vercel.com) : c'est lui qui met le site sur Internet. On s'y inscrit avec le bouton **Continue with GitHub**, sans autre mot de passe.
+   Propose-lui de créer ces comptes pendant l'entretien, à son rythme. Ce n'est pas obligatoire pour remplir le portfolio.
+4. **Les connecteurs sont facultatifs.** Sans eux, tout marche : la personne suit tes étapes (étape 5, chemin B). Si elle veut que tu fasses la mise en ligne toi-même et que ton application le permet, explique-lui où les activer : dans les paramètres de l'application, rubrique des connecteurs (ou applications), puis **GitHub** et **Vercel**, et **Connecter**. Ne lui promets pas un menu que tu ne vois pas : si tu ne sais pas où il se trouve dans son application, dis-le et passe au chemin B.
+
 ## Étape 0. Montre d'abord à quoi ressemble le portfolio
 
 La personne ne connaît pas le résultat. Avant toute question, **montre-lui le portfolio**, sinon elle répond à l'aveugle.
@@ -61,7 +76,7 @@ Pose des questions ouvertes. Ne glisse pas de réponse dans la question (« tu a
 5. Un ton souhaité : sobre, chaleureux, direct, créatif ?
 
 ### B. Page d'accueil
-6. La phrase d'accroche (`identite.accroche`, sous le nom). Demande d'abord à la personne d'écrire la sienne, même maladroite, puis aide-la à la resserrer. Si elle n'en a pas, propose 3 versions courtes fondées sur ses réponses, et laisse-la choisir ou corriger. Si la phrase parle d'IA, entoure le mot de doubles crochets : `[[IA]]` en français, `[[AI]]` en anglais (un seul par langue). Au survol des lettres i et a du nom, une flèche rouge relie ces lettres au mot. Sans marqueur, la flèche écrit « IA » à la main près du nom. Explique-le à la personne en une phrase.
+6. La phrase d'accroche (`identite.accroche`, sous le nom). Demande d'abord à la personne d'écrire la sienne, même maladroite, puis aide-la à la resserrer. Si elle n'en a pas, propose 3 versions courtes fondées sur ses réponses, et laisse-la choisir ou corriger. Si la phrase parle d'IA, entoure le mot de doubles crochets : `[[IA]]` en français, `[[AI]]` en anglais (un seul par langue). Au survol des lettres i et a du nom, une flèche rouge relie ces lettres au mot. Sans marqueur, la flèche écrit « IA » à la main près du nom. Explique-le à la personne en une phrase, et dis-lui quelles lettres de son nom s'allumeront : un i suivi plus loin d'un a (IA, en français), un a suivi plus loin d'un i (AI, en anglais), la paire la plus serrée, en lisant prénom puis nom. Une seule paire trouvée : elle sert dans les deux langues. Aucune (ni i suivi d'un a, ni a suivi d'un i) : pas d'effet, et le marqueur ne sert à rien.
 7. Un court texte à côté de la photo (`identite.texte` : formation, poste actuel). Une photo : oui ou non ? (portrait 4:5 recommandé). **Dis tout de suite où la déposer** : dans le dossier `img/`, par exemple `img/profil.jpg` (elle remplace la photo d'exemple).
 8. Logos d'école ou d'entreprise à afficher (`identite.logos`) ? Ils doivent être fournis par la personne (SVG ou PNG transparent). Optionnel. **Dis où les déposer** : dans `img/logos/`, un fichier par logo.
 9. Faut-il afficher « mis à jour le... » ? Si oui, mets la date du jour dans `site.miseAJour` (`AAAA-MM-JJ`). Sinon, retire la clé.
@@ -142,7 +157,20 @@ Pose des questions ouvertes. Ne glisse pas de réponse dans la question (« tu a
 ## Étape 5. Mise en ligne
 
 Recommande fortement Vercel et explique-le en quelques phrases : c'est un hébergeur qui met le site sur Internet avec une adresse `prenom-nom-portfolio.vercel.app`, gratuit pour un portfolio personnel, sans commande, et mis à jour à chaque envoi sur GitHub.
-Marche à suivre : mettre le dossier dans un dépôt GitHub, puis sur vercel.com, **Add New**, **Project**, choisir ce dépôt, **Deploy**. Ensuite, mettre l'adresse obtenue dans `site.url` et relancer `python3 sync-contenu.py`.
+Il y a deux chemins. Choisis selon tes outils (voir « Avant tout »), et dis à la personne lequel vous prenez.
+
+**Chemin A : tu as accès à GitHub et à Vercel** (connecteurs, ou `git` et la commande `vercel` dans un terminal). Avec l'accord de la personne, crée le dépôt `prenom-nom-portfolio`, envoie les fichiers, importe le dépôt sur Vercel, et donne-lui l'adresse. Demande son accord avant chaque action qui crée ou publie quelque chose.
+
+**Chemin B : tu n'as accès à rien** (cas le plus fréquent). Guide la personne **une étape par message**. Attends qu'elle confirme (« c'est fait ») avant la suivante. Si elle bloque, demande-lui une capture d'écran et dis-lui exactement où cliquer.
+1. Prépare le dossier final et donne-le-lui (en ZIP si tu ne peux pas écrire dans son dossier). Dis-lui de le décompresser.
+2. **Compte GitHub** : sur github.com, **Sign up** (s'il n'en a pas). Gratuit.
+3. **Créer le dépôt** : en haut à droite, le bouton **+**, puis **New repository**. Nom : `prenom-nom-portfolio`. Coche **Public**. Clique sur **Create repository**.
+4. **Envoyer les fichiers** : sur la page du dépôt vide, clique sur le lien **uploading an existing file**. Ouvre le dossier décompressé, sélectionne **tout ce qu'il contient** (les fichiers et les dossiers `img`, `fonts`, `apercu`), pas le dossier lui-même, et fais-le glisser dans la page. Attends la fin du chargement, puis clique sur **Commit changes**. Vérifie avec elle que `index.html` apparaît bien à la racine du dépôt, et pas dans un sous-dossier.
+5. **Compte Vercel** : sur vercel.com, **Sign Up**, choisis l'offre gratuite **Hobby**, puis **Continue with GitHub** et accepte.
+6. **Importer le dépôt** : **Add New**, puis **Project**. À côté de `prenom-nom-portfolio`, clique sur **Import**. Si le dépôt n'apparaît pas, clique sur le lien qui permet de régler l'accès de Vercel à GitHub, et autorise ce dépôt.
+7. **Déployer** : ne change aucun réglage (pas de commande de build, preset **Other**). Clique sur **Deploy**. Environ une minute après, Vercel affiche l'adresse du site.
+8. **Finaliser** : mets cette adresse dans `site.url`, relance `python3 sync-contenu.py` si tu peux (sinon, dis-le), puis demande-lui de renvoyer `contenu.json`, `contenu.js` et `index.html` sur GitHub (**Add file**, puis **Upload files**, mêmes noms : ils remplacent les anciens). Vercel met le site à jour tout seul.
+9. **Pour la suite**, explique : à chaque modification, elle renvoie les fichiers changés sur GitHub de la même façon, et le site se met à jour en une minute.
 Nom de l'adresse : recommande `prenom-nom-portfolio` (minuscules, sans accents ni espaces, mots séparés par des tirets). L'adresse vient de ce nom : le plus simple est de nommer ainsi le dépôt GitHub (par exemple lors de **Use this template**) ou le projet Vercel à l'import. Si l'adresse est déjà prise, Vercel ajoute des lettres au hasard : on peut alors ajouter une adresse libre dans le projet Vercel, **Settings**, puis **Domains** (par exemple `prenom-nom-portfolio.vercel.app` ou une variante). Puis mettre cette adresse dans `site.url` et synchroniser.
 Si la personne ne veut pas de Vercel, cite les alternatives : GitHub Pages, Netlify, Cloudflare Pages, ou un hébergement classique (OVH, Hostinger...). Détails dans [GUIDE.md](GUIDE.md#vercel).
 Rappelle de relancer `python3 sync-contenu.py` avant chaque envoi.

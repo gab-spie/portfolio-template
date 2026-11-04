@@ -109,7 +109,7 @@ Tous les champs sont optionnels : un champ vide ne s'affiche pas.
 |---|---|
 | `prenom`, `nom` | Ton nom, affiché en très grand. |
 | `etiquette` | Le petit mot au-dessus du nom. Par défaut : « Portfolio ». |
-| `accroche` | Ta phrase d'accroche, sous le nom, à gauche de la photo. Si elle parle d'IA, écris `[[IA]]` (FR) et `[[AI]]` (EN) : quand on survole les lettres i et a de ton nom, une flèche rouge les relie à ce mot. Sans marqueur, la flèche écrit « IA » à la main à côté de ton nom. Sans i ni a dans ton nom, pas d'effet. |
+| `accroche` | Ta phrase d'accroche, sous le nom, à gauche de la photo. Si elle parle d'IA, écris `[[IA]]` (FR) et `[[AI]]` (EN) : quand on survole les lettres i et a de ton nom, une flèche rouge les relie à ce mot. Sans marqueur, la flèche écrit « IA » à la main à côté de ton nom. Sans i ni a dans ton nom, pas d'effet. Les lettres sont cherchées dans le prénom et le nom lus à la suite : un i suivi plus loin d'un a donne IA, un a suivi d'un i donne AI, et la paire la plus serrée gagne. IA sert en français et AI en anglais ; si ton nom n'a qu'une des deux, elle sert dans les deux langues. |
 | `texte` | Court texte à côté de la photo. |
 | `photo` | `{ "src", "alt", "largeur", "hauteur" }`. Sans photo, la page se réorganise. |
 | `logos` | Logos d'école ou d'entreprise (optionnels) : `nom`, `src`, `lien`, `largeur` en pixels. Par défaut, le logo prend la couleur du texte. `"teinte": false` garde ses couleurs d'origine. |
