@@ -60,5 +60,5 @@ Nombre de projets à présenter (1 à 4 conseillés, davantage possible) :
 ## F. Mise en ligne
 
 20. Veux-tu mettre le site en ligne (Vercel est gratuit et recommandé) ? As-tu un compte GitHub ? :
-21. Une adresse gratuite en `.vercel.app` ou un nom de domaine à toi (`prenom-nom.fr`, payant) ? :
+21. Une adresse gratuite en `.vercel.app` ou un nom de domaine à toi (`prenom-nom.fr`, payant) ? Pour l'adresse gratuite, le nom conseillé est `prenom-nom-portfolio` (minuscules, sans accents ni espaces, mots séparés par des tirets), ce qui donne `prenom-nom-portfolio.vercel.app` :
 22. Veux-tu aussi un PDF du portfolio (français, anglais) à télécharger sur le site ? :

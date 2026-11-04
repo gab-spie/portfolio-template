@@ -30,13 +30,14 @@ Fonctionne avec Claude Code, ChatGPT (Codex ou conversation), Gemini, Cursor ou 
 
 1. Ouvre le dossier avec l'IA.
 2. Dis : « adapte ce portfolio à moi ».
-3. Elle lit `INSTRUCTIONS-IA.md` et te pose des questions, par petits groupes :
+3. Elle lit `INSTRUCTIONS-IA.md`, te montre d'abord à quoi ressemble le portfolio, puis te pose des questions, par petits groupes :
    - **Ton contexte** : qui tu es, ta situation, ton objectif (stage, emploi, clients...), qui va lire ton site, les langues.
    - **Ta page d'accueil** : ta phrase d'accroche (tu proposes la tienne ; si tu n'en as pas, elle t'en propose 3), le texte à côté de la photo, tes logos.
    - **Chaque projet** : ce que c'est, ton rôle, le résultat, les points clés, les outils, les captures. **Uniquement des chiffres réels.**
    - **Les couleurs de chaque projet** : fond, texte, accent. Sans avis de ta part, elle propose 3 palettes et vérifie que le texte reste lisible.
    - **La grande phrase qui s'allume** : tu proposes la tienne ; sinon elle propose 3 versions fondées sur tes vrais projets.
    - **Les options** : schéma en étapes, outils, autres projets, contact.
+   - **La mise en ligne et le PDF** : Vercel, adresse du site, PDF à télécharger.
 4. Elle remplit `contenu.json`, prépare les images, supprime le contenu d'exemple, lance la synchronisation et te montre le rendu sur ordinateur et mobile.
 
 **ChatGPT dans le navigateur (sans accès aux fichiers) :**
@@ -104,7 +105,7 @@ Ouvre `http://localhost:8000`. Teste aussi `?lang=en`, le thème clair/sombre (b
 
 ### C'est quoi ?
 
-**Vercel est un hébergeur de sites web.** Ton portfolio est un dossier sur ton ordinateur : personne d'autre ne peut le voir. Vercel met ces fichiers sur des serveurs connectés à Internet et te donne une adresse (par exemple `ton-nom.vercel.app`). Un recruteur clique dessus et voit ton site.
+**Vercel est un hébergeur de sites web.** Ton portfolio est un dossier sur ton ordinateur : personne d'autre ne peut le voir. Vercel met ces fichiers sur des serveurs connectés à Internet et te donne une adresse (par exemple `prenom-nom-portfolio.vercel.app`). Un recruteur clique dessus et voit ton site.
 
 ### Pourquoi le choisir
 
@@ -123,6 +124,8 @@ Ouvre `http://localhost:8000`. Teste aussi `?lang=en`, le thème clair/sombre (b
 4. Laisse tous les réglages par défaut (pas de commande de build, pas de dossier de sortie) et clique sur **Deploy**.
 5. Après environ une minute, Vercel te donne l'adresse de ton site.
 6. Mets cette adresse dans `site.url` de `contenu.json`, lance `python3 sync-contenu.py`, puis renvoie les fichiers sur GitHub. Les aperçus de partage seront alors corrects.
+
+**Le nom de l'adresse.** Nom conseillé : `prenom-nom-portfolio`, pour obtenir `prenom-nom-portfolio.vercel.app`. Écris-le en minuscules, sans accents ni espaces, mots séparés par des tirets (par exemple `lea-verdier-portfolio`). L'adresse vient de ce nom : le plus simple est de le donner à ton dépôt GitHub (par exemple lors de **Use this template**) ou au projet Vercel à l'import (étape 3). Si l'adresse est déjà prise, Vercel ajoute des lettres au hasard : ajoute alors une adresse libre dans le projet Vercel, **Settings**, puis **Domains** (par exemple `prenom-nom-portfolio.vercel.app` ou une variante). Mets ensuite cette adresse dans `site.url` et synchronise (étape 6).
 
 Le bouton **Deploy with Vercel** du README fait autre chose : il crée dans ton GitHub une copie neuve du template (avec le contenu d'exemple) et la met en ligne. C'est un raccourci si tu pars de zéro. Si tu as déjà ton dépôt, importe-le comme ci-dessus.
 
@@ -178,7 +181,7 @@ GitHub is where the template is stored. Whichever way you choose, you end up wit
 
 ## 3. Fill in the content
 
-**With an AI assistant** (Claude Code, ChatGPT/Codex, Gemini, Cursor or any other): open the folder and say "adapt this portfolio to me". It reads `INSTRUCTIONS-IA.md` and interviews you: your context and goal, your tagline, each project (real figures only), **the colours of each project**, the sentence that lights up on scroll, optional sections. You propose your own tagline and sentence; if you have none, it suggests three versions. It then fills `contenu.json`, prepares the images, removes the example content, runs the sync and shows you the result.
+**With an AI assistant** (Claude Code, ChatGPT/Codex, Gemini, Cursor or any other): open the folder and say "adapt this portfolio to me". It reads `INSTRUCTIONS-IA.md`, first shows you what the portfolio looks like, then interviews you step by step: your context and goal, your tagline, each project (real figures only), **the colours of each project**, the sentence that lights up on scroll, optional sections, publishing and PDF. You propose your own tagline and sentence; if you have none, it suggests three versions. It then fills `contenu.json`, prepares the images, removes the example content, runs the sync and shows you the result.
 
 With ChatGPT in the browser (no file access): paste `INSTRUCTIONS-IA.md`, then your `contenu.json`, answer its questions, and paste back the `contenu.json` it returns. Add the listed images to `img/` (blur confidential details yourself first), then run `python3 sync-contenu.py`.
 
@@ -214,7 +217,7 @@ Also try `?lang=en`, the theme buttons (top right) and a mobile view. Double-cli
 
 ## 7. Publish with Vercel (strongly recommended)
 
-**Vercel is a web hosting service.** Your portfolio is just files on your computer. Vercel puts them on servers connected to the internet and gives you an address such as `your-name.vercel.app`.
+**Vercel is a web hosting service.** Your portfolio is just files on your computer. Vercel puts them on servers connected to the internet and gives you an address such as `firstname-lastname-portfolio.vercel.app`.
 
 Why we recommend it:
 - **Free** for a personal portfolio (Hobby plan, non-commercial use).
@@ -231,6 +234,8 @@ How to:
 4. Keep all default settings (no build command, no output folder) and click **Deploy**.
 5. About a minute later, Vercel gives you your address.
 6. Put it in `site.url` in `contenu.json`, run `python3 sync-contenu.py`, and push again so share previews are correct.
+
+**The address name.** Suggested name: `firstname-lastname-portfolio`, to get `firstname-lastname-portfolio.vercel.app`. Write it in lowercase, without accents or spaces, words separated by hyphens (for example `lea-verdier-portfolio`). The address comes from this name: the simplest is to give it to your GitHub repository (for example with **Use this template**) or to the Vercel project when importing (step 3). If the address is already taken, Vercel adds random letters: then add a free address in the Vercel project, **Settings**, then **Domains** (for example `firstname-lastname-portfolio.vercel.app` or a variant). Then put this address in `site.url` and sync (step 6).
 
 Note: the **Deploy with Vercel** button in the README does something else. It creates a fresh copy of the template (with the example content) in your GitHub and deploys it. Use it as a shortcut when starting from scratch. If you already have your repository, import it as above.
 

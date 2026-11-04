@@ -101,7 +101,7 @@ Pose des questions ouvertes. Ne glisse pas de réponse dans la question (« tu a
 
 ### F. Mise en ligne et PDF
 20. Veux-tu mettre le site en ligne, avec une adresse que tu peux donner à des recruteurs ou des clients ? Explique en deux phrases ce qu'est Vercel (un hébergeur gratuit pour un portfolio, sans commande, qui met le site à jour à chaque modification) et recommande-le. Demande si elle a déjà un compte GitHub (gratuit, nécessaire pour Vercel). Précise que tu ne créeras aucun compte et ne publieras rien sans son accord.
-21. Veux-tu un nom de domaine à toi (`prenom-nom.fr`, payant) ou une adresse en `.vercel.app` (gratuite) ?
+21. Veux-tu un nom de domaine à toi (`prenom-nom.fr`, payant) ou une adresse en `.vercel.app` (gratuite) ? Pour l'adresse gratuite, recommande le nom `prenom-nom-portfolio` (en minuscules, sans accents ni espaces, mots séparés par des tirets, par exemple `lea-verdier-portfolio`), pour obtenir `prenom-nom-portfolio.vercel.app`.
 22. Veux-tu aussi un PDF du portfolio, en français et en anglais, à proposer en téléchargement sur le site ? Si oui, renvoie vers « Exporter en PDF » dans le README.
 
 ## Étape 2. Remplir `contenu.json`
@@ -141,8 +141,9 @@ Pose des questions ouvertes. Ne glisse pas de réponse dans la question (« tu a
 
 ## Étape 5. Mise en ligne
 
-Recommande fortement Vercel et explique-le en quelques phrases : c'est un hébergeur qui met le site sur Internet avec une adresse `nom.vercel.app`, gratuit pour un portfolio personnel, sans commande, et mis à jour à chaque envoi sur GitHub.
+Recommande fortement Vercel et explique-le en quelques phrases : c'est un hébergeur qui met le site sur Internet avec une adresse `prenom-nom-portfolio.vercel.app`, gratuit pour un portfolio personnel, sans commande, et mis à jour à chaque envoi sur GitHub.
 Marche à suivre : mettre le dossier dans un dépôt GitHub, puis sur vercel.com, **Add New**, **Project**, choisir ce dépôt, **Deploy**. Ensuite, mettre l'adresse obtenue dans `site.url` et relancer `python3 sync-contenu.py`.
+Nom de l'adresse : recommande `prenom-nom-portfolio` (minuscules, sans accents ni espaces, mots séparés par des tirets). L'adresse vient de ce nom : le plus simple est de nommer ainsi le dépôt GitHub (par exemple lors de **Use this template**) ou le projet Vercel à l'import. Si l'adresse est déjà prise, Vercel ajoute des lettres au hasard : on peut alors ajouter une adresse libre dans le projet Vercel, **Settings**, puis **Domains** (par exemple `prenom-nom-portfolio.vercel.app` ou une variante). Puis mettre cette adresse dans `site.url` et synchroniser.
 Si la personne ne veut pas de Vercel, cite les alternatives : GitHub Pages, Netlify, Cloudflare Pages, ou un hébergement classique (OVH, Hostinger...). Détails dans [GUIDE.md](GUIDE.md#vercel).
 Rappelle de relancer `python3 sync-contenu.py` avant chaque envoi.
 Explique à la personne qu'après chaque modification de `contenu.json` elle doit synchroniser : double-clic sur `synchroniser.bat` (Windows) ou `synchroniser.command` (Mac), ou `python3 sync-contenu.py`. Sans cela, une page ouverte par double-clic affiche l'ancien contenu.
