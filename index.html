@@ -86,6 +86,26 @@
   h1.name .l:hover { color: var(--accent-ink); }
   .js h1.name .l { opacity: 0; transform: translate(var(--x, 0), var(--y, 0)) rotate(var(--r, 0)); }
   .js h1.name.go .l { opacity: 1; transform: none; transition: opacity 0.6s var(--ease), transform 1.1s var(--ease), color 0.3s; transition-delay: calc(var(--i) * 38ms), calc(var(--i) * 38ms), 0s; }
+  /* effet IA / AI : les deux lettres passent en rouge, une flèche les relie au mot marqué (ou écrit « IA » à la main) */
+  .js h1.name.go.ai-on .l.pair, h1.name.ai-on .l.pair { color: var(--ai); transform: translateY(-0.07em); transition: color 0.3s, transform 0.4s var(--ease); transition-delay: 0s; }
+  h1.name.ai-on .l:not(.pair) { color: inherit; }
+  header.hero { position: relative; --ai: #d61f1f; }
+  :root[data-theme="dark"] header.hero { --ai: #ff3b3b; }
+  .ai-link { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; z-index: 2; }
+  .ai-link path { fill: none; stroke: var(--ai); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+  .ai-link .ai-line { stroke-dasharray: var(--len, 1000); stroke-dashoffset: var(--len, 1000); transition: stroke-dashoffset 0.25s ease; }
+  .ai-link.rev .ai-line { stroke-dashoffset: calc(var(--len, 1000) * -1); }
+  .ai-link .ai-line2, .ai-link .ai-hand { stroke-dasharray: var(--l, 400); stroke-dashoffset: var(--l, 400); transition: stroke-dashoffset 0.2s ease; }
+  .ai-link .ai-head { opacity: 0; transition: opacity 0.15s; }
+  .ai-link.no-anim path { transition: none !important; }
+  .hero.ai-show .ai-link .ai-line { stroke-dashoffset: 0; transition: stroke-dashoffset 0.75s cubic-bezier(.6,0,.3,1); }
+  .hero.ai-show .ai-link .ai-line2 { stroke-dashoffset: 0; transition: stroke-dashoffset 0.35s ease-out 0.7s; }
+  .hero.ai-show .ai-link .ai-hand { stroke-dashoffset: 0; transition: stroke-dashoffset var(--t) ease-in-out var(--d); }
+  .hero.ai-show .ai-link .ai-head { opacity: 1; transition: opacity 0.2s 0.65s; }
+  .hero.ai-show .ai-link.rev .ai-head { transition: opacity 0.2s 1s; }
+  .lead .ai-word { transition: color 0.3s; cursor: default; }
+  .hero.ai-show .lead .ai-word { color: var(--ai); }
+  @media print { .ai-link { display: none; } }
   .hero-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 40px; align-items: end; }
   .lead { font-size: clamp(1.2rem, min(2.3vw, 3.4svh), 2.05rem); line-height: 1.35; letter-spacing: -0.015em; margin: 0; max-width: 32ch; }
   .lead .hl { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
@@ -322,6 +342,7 @@
     html { scroll-behavior: auto; }
     .js .reveal, .js h1.name .l { opacity: 1 !important; transform: none !important; transition: none !important; }
     .dot, .media .float { animation: none; }
+    .ai-link path { transition: none !important; }
     .js .card .card-grid > * { opacity: 1; transform: none; transition: none; }
     body { transition: none; }
     .statement .wd { opacity: 1; }
@@ -633,12 +654,15 @@
     var hasProjects = projets.length > 0;
     var bouton = id.bouton || UI.see;
 
-    html.push('<header class="hero container" id="top">');
+    html.push('<header class="hero container" id="top"><svg class="ai-link" aria-hidden="true"><path class="ai-line"/><path class="ai-line2"/><path class="ai-head"/></svg>');
     html.push(tag('p', 'kicker-top', isEmpty(id.etiquette) ? 'Portfolio' : id.etiquette));
     // un mot par bloc : les espaces du prénom ou du nom (« de Rivière ») restent visibles
     if (nom) html.push('<h1 class="name" aria-label="' + esc(nom) + '">' + nom.split(/\s+/).map(function (w) { return '<span class="w">' + esc(w) + '</span>'; }).join(' ') + '</h1>');
     html.push('<div class="hero-row">');
-    html.push(isEmpty(id.accroche) ? '<div></div>' : tag('p', 'lead', id.accroche));
+    // [[IA]] ou [[AI]] dans l'accroche : le mot visé par la flèche (un seul par langue)
+    var aiMark = function (s) { var done = false; return s.replace(/\[\[(ia|ai)\]\]/gi, function (m, w) { if (done) return w; done = true; return '<span class="ai-word">' + w + '</span>'; }); };
+    var acEn = en(id.accroche);
+    html.push(isEmpty(id.accroche) ? '<div></div>' : '<p class="lead"' + (acEn === null ? '' : ' data-en="' + esc(aiMark(rich(acEn))) + '"') + '>' + aiMark(H(id.accroche)) + '</p>');
     html.push('<div class="side' + (photo ? '' : ' no-photo') + '">');
     if (photo) html.push('<div class="me">' + imgTag({ src: photo.src, alt: photo.alt || nom, largeur: photo.largeur || 720, hauteur: photo.hauteur || 900 }, '', 'eager') + '</div>');
     if (!isEmpty(id.texte)) html.push(tag('p', '', id.texte));
@@ -879,6 +903,132 @@
   /* ============================================================
      4. Animations et interactions
      ============================================================ */
+  // effet IA / AI : une paire i puis a (IA) ou a puis i (AI) dans le nom s'allume, et une flèche la relie au mot [[IA]] de l'accroche
+  function aiEffect(h1) {
+    var letters = [].slice.call(h1.querySelectorAll('.l'));
+    var base = letters.map(function (l) { return l.textContent.normalize('NFD').charAt(0).toLowerCase(); });
+    // les deux lettres les plus proches, dans un même mot ou d'un mot à l'autre
+    var find = function (a, b) {
+      var best = null;
+      base.forEach(function (c, j) {
+        var k = c === a ? base.indexOf(b, j + 1) : -1;
+        if (k > 0 && (!best || k - j < best[2])) best = [letters[j], letters[k], k - j];
+      });
+      return best && best.slice(0, 2);
+    };
+    var IA = find('i', 'a'), AI = find('a', 'i');
+    if (!IA && !AI) return; // pas de paire : les a et i restent des lettres comme les autres
+    var hero = h1.closest('header.hero'), svg = hero.querySelector('.ai-link');
+    var line = svg.querySelector('.ai-line'), line2 = svg.querySelector('.ai-line2'), head = svg.querySelector('.ai-head');
+    // une seule paire trouvée : on l'utilise dans les deux langues
+    var pair = function () { return root.lang === 'en' ? AI || IA : IA || AI; };
+    function draw() {
+      var word = hero.querySelector('.lead .ai-word'), p = pair(), rev = svg.classList.contains('rev');
+      letters.forEach(function (l) { l.classList.toggle('pair', p.indexOf(l) >= 0); });
+      svg.querySelectorAll('.ai-hand').forEach(function (e) { e.remove(); });
+      var hb = hero.getBoundingClientRect(), r0 = p[0].getBoundingClientRect(), r1 = p[1].getBoundingClientRect();
+      var rg = document.createRange(); rg.selectNodeContents(h1); var hr = rg.getBoundingClientRect();
+      var X = function (v) { return v - hb.left; }, Y = function (v) { return v - hb.top; };
+      // 1. les deux lettres reliées par en dessous
+      var p0 = { x: X(r0.left + r0.width / 2), y: Y(r0.bottom) + 6 }, p1 = { x: X(r1.left + r1.width / 2), y: Y(r1.bottom) + 6 };
+      var smile = 'M' + p0.x + ' ' + p0.y + ' Q' + ((p0.x + p1.x) / 2) + ' ' + (Math.max(p0.y, p1.y) + 18) + ' ' + p1.x + ' ' + p1.y;
+      var d = rev ? 'M' + p0.x + ' ' + p0.y : smile, cur = rev ? p0 : p1, back = false, ex, ey, ang, k = 11;
+      if (!word) {
+        // pas de mot marqué : la flèche écrit « IA » (ou « AI ») à la main, à droite de la 2e lettre, au-dessus de la ligne
+        var fs = parseFloat(getComputedStyle(h1).fontSize), gh = Math.max(18, fs * 0.26), txt = root.lang === 'en' ? 'AI' : 'IA';
+        var W = gh * 1.3, x0 = X(r1.right) + fs * 0.04, by = Y(r1.top) + fs * 0.1;
+        var kb = hero.querySelector('.kicker-top').getBoundingClientRect();
+        if (x0 < X(kb.right) + 8 && by - gh < Y(kb.bottom)) x0 = X(kb.right) + 10;
+        x0 = Math.min(x0, hb.width - W - 4);
+        var P = function (px, py) { return (x0 + (px + py * 0.18) * gh).toFixed(1) + ' ' + (by - py * gh).toFixed(1); };
+        var glyph = {
+          I: function (o) { return ['M' + P(o + 0.06, 0) + ' Q' + P(o + 0.02, 0.5) + ' ' + P(o + 0.1, 1), 'M' + P(o - 0.04, 1) + ' L' + P(o + 0.24, 1.02), 'M' + P(o - 0.08, 0) + ' L' + P(o + 0.2, 0.02)]; },
+          A: function (o) { return ['M' + P(o, 0) + ' Q' + P(o + 0.2, 0.6) + ' ' + P(o + 0.34, 1) + ' Q' + P(o + 0.46, 0.55) + ' ' + P(o + 0.66, 0.02), 'M' + P(o + 0.12, 0.38) + ' Q' + P(o + 0.34, 0.46) + ' ' + P(o + 0.58, 0.36)]; }
+        };
+        var strokes = glyph[txt[0]](0).concat(glyph[txt[1]](txt[0] === 'I' ? 0.42 : 0.92));
+        // la 2e lettre est la dernière de sa ligne : le trait monte d'un seul geste jusqu'à l'écriture
+        var alone = !letters.some(function (l) { var b = l.getBoundingClientRect(); return b.left > r1.left + 2 && Math.abs(b.top - r1.top) < r1.height / 2; });
+        if (alone) d += ' C' + (p1.x + gh * 0.8) + ' ' + (p1.y + 4) + ' ' + (x0 - gh * 0.2) + ' ' + (by + gh * 0.6) + ' ' + P(txt[0] === 'I' ? 0.06 : 0, 0);
+        var t = alone ? 0.7 : 0.55;
+        strokes.forEach(function (s) {
+          var e = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+          e.setAttribute('class', 'ai-hand'); e.setAttribute('d', s); svg.appendChild(e);
+          var L = e.getTotalLength(), dur = Math.max(0.12, L / gh * 0.14);
+          e.style.setProperty('--l', Math.ceil(L)); e.style.setProperty('--d', t.toFixed(2) + 's'); e.style.setProperty('--t', dur.toFixed(2) + 's');
+          t += dur + 0.04;
+        });
+        line.setAttribute('d', d); line2.setAttribute('d', ''); head.setAttribute('d', '');
+        svg.style.setProperty('--len', Math.ceil(line.getTotalLength()));
+        return;
+      }
+      var lead = word.closest('.lead'), to = word.getBoundingClientRect(), lb = lead.getBoundingClientRect();
+      var firstLine = to.top - lb.top < to.height * 0.6;
+      var overLead = Math.max(r0.left, r1.left) < lb.right && Math.min(r0.right, r1.right) > lb.left - 40;
+      var lane = !firstLine && lb.left > 18;
+      // 2. si besoin, retour vers la gauche sous le nom (sous les jambages, et sous le sourire s'il est long)
+      if (!overLead || lane) {
+        var wy = Y(hr.bottom) + (letters.indexOf(p[1]) - letters.indexOf(p[0]) > 2 ? 30 : 14), wx = lane ? X(lb.left) - Math.min(34, lb.left - 9) + 30 : X(Math.min(r0.left, r1.left)) - 70;
+        if (rev) d += ' C' + (cur.x - 6) + ' ' + (cur.y + 18) + ' ' + (cur.x - 30) + ' ' + wy + ' ' + (cur.x - 60) + ' ' + wy + ' L' + wx + ' ' + wy;
+        else d += ' C' + (cur.x + 34) + ' ' + (cur.y + 2) + ' ' + (cur.x + 26) + ' ' + wy + ' ' + (cur.x - 14) + ' ' + wy + ' L' + wx + ' ' + wy;
+        cur = { x: wx, y: wy }; back = true;
+      } else if (letters.some(function (l) { return l.getBoundingClientRect().top > r1.bottom - 4; })) {
+        // mobile : une ligne du nom en dessous, on la contourne par la droite
+        var wx2 = X(hr.right) + 22, wy2 = Y(hr.bottom) - 10;
+        d += ' C' + (cur.x + 40) + ' ' + (cur.y + 26) + ' ' + wx2 + ' ' + (wy2 - 50) + ' ' + wx2 + ' ' + wy2;
+        cur = { x: wx2, y: wy2 };
+      }
+      if (lane) {
+        // 3a. descente par la marge gauche, petite boucle, puis vers la ligne du mot
+        var lx = cur.x - 30, wyMid = Y(to.top + to.height / 2), my = (cur.y + wyMid) / 2, rr = lb.left > 60 ? 12 : 7;
+        ex = X(lb.left) - 10; ey = wyMid; ang = 0;
+        d += ' Q' + lx + ' ' + cur.y + ' ' + lx + ' ' + (cur.y + 30) + ' L' + lx + ' ' + my +
+          ' a' + rr + ' ' + rr + ' 0 1 0 ' + (rr * 1.3) + ' ' + (-rr * 0.5) + ' a' + rr + ' ' + rr + ' 0 0 0 ' + (-rr * 1.4) + ' ' + (rr * 0.6) +
+          ' L' + lx + ' ' + (ey - 26) + ' Q' + lx + ' ' + ey + ' ' + ex + ' ' + ey;
+      } else {
+        // 3b. descente vers le mot par le dessus, avec une petite boucle
+        ex = X(to.left + to.width / 2); ey = Y(to.top) - 6;
+        var cx = ex, cy = ey - Math.max(24, (ey - cur.y) * 0.3);
+        var dy = ey - cur.y, mx = (cur.x + ex) / 2 + 18, my2 = cur.y + dy * 0.42, r = Math.max(8, Math.min(16, Math.abs(dy) * 0.06));
+        var c1 = back ? (cur.x - 50) + ' ' + (cur.y + 8) : cur.x + ' ' + (cur.y + dy * 0.22);
+        d += ' C' + c1 + ' ' + (mx - 30) + ' ' + (my2 - 12) + ' ' + mx + ' ' + my2 +
+          ' a' + r + ' ' + r + ' 0 1 0 ' + (-r * 0.6) + ' ' + (-r * 1.3) +
+          ' a' + r + ' ' + r + ' 0 0 0 ' + (r * 0.4) + ' ' + (r * 1.6) +
+          ' C' + (mx + 30) + ' ' + (my2 + dy * 0.2) + ' ' + cx + ' ' + cy + ' ' + ex + ' ' + ey;
+        ang = Math.atan2(ey - cy, ex - cx);
+      }
+      line.setAttribute('d', d);
+      line2.setAttribute('d', rev ? smile : '');
+      if (rev) {
+        // sens inverse : la pointe arrive sur la 2e lettre, au bout du sourire
+        var L2 = line2.getTotalLength(), q0 = line2.getPointAtLength(L2), q1 = line2.getPointAtLength(Math.max(0, L2 - 10));
+        ex = q0.x; ey = q0.y; ang = Math.atan2(q0.y - q1.y, q0.x - q1.x);
+        line2.style.setProperty('--l', Math.ceil(L2));
+      }
+      var a1 = ang + 2.6, a2 = ang - 2.6;
+      head.setAttribute('d', 'M' + (ex + k * Math.cos(a1)) + ' ' + (ey + k * Math.sin(a1)) + ' L' + ex + ' ' + ey + ' L' + (ex + k * Math.cos(a2)) + ' ' + (ey + k * Math.sin(a2)));
+      svg.style.setProperty('--len', Math.ceil(line.getTotalLength()));
+    }
+    function on(v, rev) {
+      // pas pendant l'ouverture (nom au centre) : seulement une fois la page en place
+      if (v && root.dataset.intro === 'c' && !root.classList.contains('intro-done')) return;
+      if (v) {
+        // repartir de zéro sans transition parasite, puis lancer le tracé
+        svg.classList.add('no-anim'); hero.classList.remove('ai-show');
+        svg.classList.toggle('rev', !!rev); draw();
+        void svg.getBoundingClientRect(); svg.classList.remove('no-anim');
+      }
+      h1.classList.toggle('ai-on', v); hero.classList.toggle('ai-show', v);
+    }
+    var target = function (e) {
+      if (e.target.closest('.lead .ai-word')) return 'word';
+      return pair().indexOf(e.target) >= 0 ? 'pair' : '';
+    };
+    // souris : survol ; tactile : un appui allume, un autre éteint
+    hero.addEventListener('pointerover', function (e) { var t = target(e); if (e.pointerType === 'mouse' && t) on(true, t === 'word'); });
+    hero.addEventListener('pointerout', function (e) { if (e.pointerType === 'mouse' && target(e)) on(false); });
+    hero.addEventListener('pointerup', function (e) { var t = target(e); if (e.pointerType !== 'mouse' && t) on(!hero.classList.contains('ai-show'), t === 'word'); });
+  }
+
   function start(C) {
     var vh = innerHeight;
     addEventListener('resize', function () { vh = innerHeight; });
@@ -911,6 +1061,7 @@
     // mesure après le découpage en lettres (sans crénage, le mot est un peu plus large)
     fitName();
     addEventListener('resize', fitName);
+    aiEffect(h1);
     // ouverture : « Portfolio » et le nom au centre de l'écran, puis chacun à sa place
     if (root.dataset.intro === 'c') {
       var kick = document.querySelector('.hero .kicker-top');

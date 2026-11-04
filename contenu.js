@@ -33,8 +33,8 @@ window.CONTENU = {
       "en": "Portfolio"
     },
     "accroche": {
-      "fr": "En master de gestion, je transforme des idées en outils qui fonctionnent vraiment, pour des équipes comme pour des artisans.",
-      "en": "In a management master's, I turn ideas into tools that actually work, for teams and for craftspeople."
+      "fr": "En master de gestion, j'utilise l'[[IA]] pour transformer des idées en outils qui fonctionnent vraiment, pour des équipes comme pour des artisans.",
+      "en": "In a management master's, I use [[AI]] to turn ideas into tools that actually work, for teams and for craftspeople."
     },
     "texte": {
       "fr": "Étudiante en master à l'Institut Horizon, en alternance chez Nordwind Labs.",

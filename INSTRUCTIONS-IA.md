@@ -61,7 +61,7 @@ Pose des questions ouvertes. Ne glisse pas de réponse dans la question (« tu a
 5. Un ton souhaité : sobre, chaleureux, direct, créatif ?
 
 ### B. Page d'accueil
-6. La phrase d'accroche (`identite.accroche`, sous le nom). Demande d'abord à la personne d'écrire la sienne, même maladroite, puis aide-la à la resserrer. Si elle n'en a pas, propose 3 versions courtes fondées sur ses réponses, et laisse-la choisir ou corriger.
+6. La phrase d'accroche (`identite.accroche`, sous le nom). Demande d'abord à la personne d'écrire la sienne, même maladroite, puis aide-la à la resserrer. Si elle n'en a pas, propose 3 versions courtes fondées sur ses réponses, et laisse-la choisir ou corriger. Si la phrase parle d'IA, entoure le mot de doubles crochets : `[[IA]]` en français, `[[AI]]` en anglais (un seul par langue). Au survol des lettres i et a du nom, une flèche rouge relie ces lettres au mot. Sans marqueur, la flèche écrit « IA » à la main près du nom. Explique-le à la personne en une phrase.
 7. Un court texte à côté de la photo (`identite.texte` : formation, poste actuel). Une photo : oui ou non ? (portrait 4:5 recommandé). **Dis tout de suite où la déposer** : dans le dossier `img/`, par exemple `img/profil.jpg` (elle remplace la photo d'exemple).
 8. Logos d'école ou d'entreprise à afficher (`identite.logos`) ? Ils doivent être fournis par la personne (SVG ou PNG transparent). Optionnel. **Dis où les déposer** : dans `img/logos/`, un fichier par logo.
 9. Faut-il afficher « mis à jour le... » ? Si oui, mets la date du jour dans `site.miseAJour` (`AAAA-MM-JJ`). Sinon, retire la clé.

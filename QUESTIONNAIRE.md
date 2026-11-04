@@ -22,7 +22,7 @@ Ne mets que des informations **vraies** : aucun chiffre inventé.
 
 ## B. Ta page d'accueil
 
-6. Ta phrase d'accroche, sous ton nom (une première version, même maladroite) :
+6. Ta phrase d'accroche, sous ton nom (une première version, même maladroite). Si tu parles d'IA, écris-le `[[IA]]` : la flèche rouge de ton nom pointera dessus :
 7. Un court texte à côté de ta photo (formation, poste actuel). As-tu une photo à mettre ? :
 8. Logos d'école ou d'entreprise à afficher (fichiers à fournir) :
 9. Afficher « mis à jour le... » ? (oui ou non) :
