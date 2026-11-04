@@ -32,9 +32,9 @@ function verifierCopie() {
       const ctx = await browser.newContext({ reducedMotion: 'reduce', colorScheme: 'light', viewport: { width: 1280, height: 900 } });
       const page = await ctx.newPage();
       await page.goto(url + '?lang=' + lang);
-      // page construite (h1.name) ou message d'erreur de contenu.json
-      await page.waitForFunction(() => document.querySelector('h1.name') || /contenu\.json/.test((document.getElementById('contenu') || {}).textContent || ''));
-      if (!(await page.$('h1.name'))) {
+      // page construite (header.hero) ou message d'erreur de contenu.json
+      await page.waitForFunction(() => document.querySelector('header.hero') || /contenu\.json/.test((document.getElementById('contenu') || {}).textContent || ''));
+      if (!(await page.$('header.hero'))) {
         throw new Error('la page ne s\'est pas construite : ' + (await page.textContent('#contenu')).trim().slice(0, 200));
       }
       await page.waitForLoadState('load');
